@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact me!</title>
+  </head>
+  <body style="padding-bottom: 500px">
+    <h1 id="back">Contact me!</h1>
+    <hr />
+
+    <!--Bar-->
+    <p>
+      <a href="../home.html">Home</a> | <a href="lemon.html">Lemon Posset</a> |
+      <a href="brussel.html">Brussel Sprouts</a> |
+      <a href="zucchini.html">Zucchini Cake</a> |
+      <strong>Contact me!</strong>
+    </p>
+
+    <article>
+      <section>
+        <p>Parameters with '*' are required</p>
+
+        <!--how do i center a div??-->
+        <form action="https://httpbin.org/anything">
+          <label for="email">E-mail me:</label> <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autofocus
+            placeholder="email@me.com"
+            required
+          />
+          <span>*</span> <br />
+          <br />
+
+          <label for="name">Nome:</label> <br />
+          <input type="text" name="name" placeholder="Seu nome" /> <br />
+          <br />
+
+          <label for="comment">Leave a cool comment!!</label> <br />
+          <textarea
+            name="comment"
+            id="comment"
+            cols="60"
+            rows="15"
+            required
+          ></textarea>
+          <span>*</span> <br />
+
+          <h1>Real quick!!</h1>
+          <label for="browser">What browser are you currently using?!:</label>
+          <br />
+
+          <input
+            type="radio"
+            name="browser"
+            id="firefox"
+            value="wrong"
+            checked
+          />
+          <label for="firefox">Firefox</label> |
+
+          <input type="radio" name="browser" id="chrome" value="wrong" />
+          <label for="chrome">Chrome</label> |
+
+          <input type="radio" name="browser" id="edge" value="wrong" />
+          <label for="edge">Edge</label>
+
+          <br />
+
+          <p style="font-size: 0.5rem">
+            <strong>[ Only one correct option ( • ᴗ - ) ✧ ]</strong>
+          </p>
+
+          <p>
+            <input type="reset" value="Oops" />
+            <input type="submit" value="Bombs away!!" />
+          </p>
+        </form>
+      </section>
+
+      <section>
+        <p>Video of a cute puppy!</p>
+        <video src="../images/puppy.webm" autoplay muted width="200px"></video>
+      </section>
+    </article>
+
+    <!--Copyright-->
+    <p>Shiroi Hana © 2025 💮</p>
+  </body>
+</html>

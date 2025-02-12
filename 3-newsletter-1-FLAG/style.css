@@ -1,0 +1,105 @@
+/* ***** Reset sheet ***** */
+@import url(../normalize-shiroi.css);
+
+/* ***** General ***** */
+
+body {
+    background-color: lightpink;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-size: 100%;
+}
+
+/* ***** Main ***** */
+
+main {
+    margin: 20px auto;
+    background-color: aliceblue;
+    max-width: 640px;
+
+    text-align: center;
+    padding: 30px 0px;
+}
+
+main > * {
+    margin: 0 30px;
+}
+
+/* ***** Header ***** */
+
+header {
+    background-image: url(images/reuniao.jpg);
+    background-size: cover;
+    background-position: center center;
+
+    padding: 50px 0px;
+}
+
+header > * {
+    margin: 20px 0;
+}
+
+header > p {
+    margin: 0 20px;
+
+    color: black;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+header h1 {
+    font-family: sans-serif;
+    font-size: 3em;
+    -webkit-text-stroke: 2px black;
+    color: orange;
+}
+
+header button {
+    padding: 9px;
+    background-color: orange;
+
+    border: none;
+    border-radius: 9px;
+
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1) -5px -5px 5px white;
+}
+
+/* ***** Article ***** */
+
+article {
+    text-align: start;
+}
+
+/* ***** Section ***** */
+
+/* ***** Footer ***** */
+
+footer {
+    border-top: 3px solid gray;
+}
+
+footer h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    color: gray;
+}
+
+footer img {
+    margin: 0px 18px;
+    padding: 2px;
+    border: 1px solid black;
+
+    filter: sepia(0.5);
+}
+
+footer p {
+    padding: 50px 0;
+    width: auto;
+
+    top: 50%;
+
+    background-color: orange;
+    color: white;
+}

@@ -1,0 +1,77 @@
+header h1, header span, header nav {
+    width: 80vw;
+    margin: auto;
+}
+
+header {
+    margin-top: 20px;
+}
+
+header h1, header span {
+    font-family: Monoton;
+    font-weight: 400;
+    display: block;
+    
+    text-align: center;
+    line-height: 0.9;
+    font-size: 3rem;
+}
+
+header h1 {
+    padding-bottom: 20px;
+}
+
+header span {
+    font-weight: 600;
+    font-size: 1.250em; /* relative font size to 3rem */
+}
+
+nav {
+    display: block;
+    padding: 5px 0;
+    border-top: 4px solid black;
+    border-bottom: 2px solid black;
+}
+
+nav ul {
+    text-align: center;
+    padding: 0%;
+
+}
+
+nav ul li {
+    display: inline-block;
+    
+    text-align: center;
+    margin: 0 calc(8px + 1.5625vw);
+    padding:  4px 4px;
+
+    border: 1px solid transparent;
+
+    border-radius: 5px;
+    transition: box-shadow .8s;
+    transition: border 0.4s;
+}
+
+nav ul li:hover {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px white;
+        border: 1px solid red;
+    }
+
+nav ul a  {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+}
+
+nav ul a:hover {
+    color: red;  
+}
+
+nav ul a:active {
+    color: blue;
+}
+
+a.active {
+    color: red;
+}

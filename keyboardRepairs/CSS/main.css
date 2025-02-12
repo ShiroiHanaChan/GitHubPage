@@ -1,0 +1,154 @@
+main {
+        article {
+        width: 80vw;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    min-width: 800px;
+}
+
+section.image-gallery {
+    display: inline;
+    
+}
+
+.image-gallery img {
+    max-width: 100%;;
+    width: 26.666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666vw;
+    height: auto;
+    
+    position: relative;
+
+    filter: grayscale(0.8);
+    transition: filter 0.4s;
+}
+
+.image-gallery img:hover {
+    filter: grayscale(0);
+}
+
+.image-gallery > * {
+    display: inline;
+    position: relative;
+}
+
+.hidden-popup-fender {    
+    z-index: 1000;
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    padding: 10px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 2em;
+    font-weight: 700;
+
+    visibility: hidden;
+}
+
+.hidden-popup-wurlitzer {    
+    z-index: 1000;
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    padding: 10px;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 2em;
+    font-weight: 700;
+
+    visibility: hidden;
+}
+
+.hidden-popup-hohner {    
+    z-index: 1000;
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    padding: 10px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 2em;
+    font-weight: 700;
+
+    visibility: hidden;
+}
+
+.image-container-fender img:hover ~ .hidden-popup-fender {
+    visibility: visible;
+}
+
+.image-container-wurlitzer img:hover ~ .hidden-popup-wurlitzer {
+    visibility: visible;
+}
+
+.image-container-hohner img:hover ~ .hidden-popup-hohner {
+    visibility: visible;
+}
+
+/* ***** FOR SALE PAGE ***** */
+
+/* for sale page */
+
+.keyboard-sale-card {
+    margin-bottom: 20px;
+}
+
+.keyboard-price {
+    font-size: 2em;
+    line-height: 0.1;
+}
+
+.keyboard-sale-card h1, .keyboard-sale-card button {
+    line-height: .7;
+    margin-top: 5px;
+}
+
+.keyboard-image-column img {
+    width: 450px;
+}
+
+.keyboard-description-info {
+    text-align: left;
+    max-width: 35vw;
+    min-width: 25vw;
+}
+
+.keyboard-description-info, .keyboard-image-column {
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.keyboard-description {
+    color: rgb(41, 41, 41);
+    overflow: hidden;
+}
+
+.keyboard-sale-card button {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    background-color: lightpink;
+
+    padding: 6px 9px;
+    transition: background-color 0.5s;
+}
+
+.keyboard-sale-card button:hover {
+    background-color: lightblue;
+}
+
+.keyboard-sale-card button:active {
+    background-color: red;
+}
+
+.fender-text-link {
+    color: black;
+}
