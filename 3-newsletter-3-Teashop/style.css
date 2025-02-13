@@ -12,10 +12,13 @@ body {
 
 button {
     background-color: black;
-
     border: none;
-
     color: white;
+}
+
+button:hover,
+a:hover {
+    cursor: pointer;
 }
 
 /* ***** Main ***** */
@@ -29,7 +32,7 @@ main {
     padding: 0px 0px;
 }
 
-main > * {
+main>* {
     margin: 0 30px;
 }
 
@@ -64,21 +67,21 @@ article h1:first-child {
     margin-top: 0px;
 }
 
-article > p {
+article>p {
     font-weight: 100;
     font-size: 3em;
     padding: 0px;
     margin: 0px;
 }
 
-article > p:last-child {
+article>p:last-child {
     font-size: 2em;
     margin: 0px;
 }
 
 .grid-system {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 30px;
 
     row-gap: 5px;
@@ -89,21 +92,21 @@ article > p:last-child {
     font-size: 1rem;
 }
 
-.grid-system > * {
+.grid-system>* {
     display: inline;
-}
-
-button:hover, a:hover {
-    cursor: pointer;
 }
 
 /* ***** Footer ***** */
 
 .widgets-section-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
     grid-template-rows: repeat(2, 1fr);
     row-gap: 5px;
+}
+
+.widgets-section-grid img {
+    width: 100%;
 }
 
 footer a {
