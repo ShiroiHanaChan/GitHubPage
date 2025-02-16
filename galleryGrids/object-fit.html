@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Grids!</title>
+    <link rel="stylesheet" href="../normalize-shiroi.css">
+
+    <style>
+
+        body {
+            
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(6, 100px);
+            grid-template-rows: repeat(5, 100px);
+
+            grid-template-areas: 
+            'a a a a a a'
+            't t b b b c'
+            't t b b b d'
+            'e f g g t2 t2'
+            'h h h i i i';
+
+            margin: 40px auto;
+            width: 600px;
+            height: 500px;
+            gap: 1px;
+
+        }
+
+        main > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item1 {
+            grid-area: a;
+            background-color: gray;
+        }
+
+        .item2 {
+            grid-area: t;
+            background: black;
+            color: white;
+        }
+
+        .item3 {
+            grid-area: b;
+        }
+
+        .item4 {
+            grid-area: c;
+        }
+
+        .item5 {
+            grid-area: d;
+        }
+
+        .item6 {
+            grid-area: e;
+        }
+
+        .item7 {
+            grid-area: f;
+        }
+
+        .item8 {
+            grid-area: g;
+        }
+
+        .item9 {
+            grid-area: h;
+        }
+
+        .item10 {
+            grid-area: i;
+        }
+
+        .item11 {
+            grid-area: t2;
+            background: black;
+            color: white;
+        }
+        
+        .bg {
+            object-fit: cover;
+        }
+
+        .titulo {
+            flex-flow: column wrap;
+            font-size: 0.5rem;
+            align-items: flex-start;
+            line-height: 0%;
+            padding-left: 10px;
+        }
+
+        .titulo p:last-child {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="item1"><p>🤍 Galeria com CSS GRIDS 🤍</p></div>
+        <div class="item2 titulo"><h1>Titulo</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p><p>mais...</p></div>
+        <div class="item3 bg"><img src="https://picsum.photos/300/200" alt=""></div>
+        <div class="item4 bg"><img src="https://picsum.photos/100" alt=""></div>
+        <div class="item5 bg"><img src="https://picsum.photos/100" alt=""></div>
+        <div class="item6 bg"><img src="https://picsum.photos/100" alt=""></div>
+        <div class="item7 bg"><img src="https://picsum.photos/100" alt=""></div>
+        <div class="item8 bg"><img src="https://picsum.photos/200/100" alt=""></div>
+        <div class="item9 bg"><img src="https://picsum.photos/300/100" alt=""></div>
+        <div class="item10 bg"><img src="https://picsum.photos/300/100" alt=""></div>
+        <div class="item11 titulo"><h1>Titulo</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing.</p><p>mais...</p></div>
+    </main>
+</body>
+</html>

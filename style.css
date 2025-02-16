@@ -38,6 +38,7 @@ main {
     border-radius: 20px;
     border: 1px solid black;
 
+    min-width: 350px;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1), -15px -15px 15px white inset;
 }
 
@@ -65,6 +66,7 @@ ul {
     flex-shrink: 1;
     flex-basis: calc(250px - 30px);
 
+    padding: 0px;
     justify-content: space-evenly;
     text-align: center;
 
