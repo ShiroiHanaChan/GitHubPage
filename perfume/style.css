@@ -1,0 +1,119 @@
+/* VARIABLES */
+@import url(../normalize-shiroi.css);
+/* MIXINS */
+/* BODY */
+body {
+  background-color: lightpink;
+  margin: auto;
+  padding: 150px 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: start;
+  padding: 0px 10px;
+  line-height: 1;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.info p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: rgb(126, 126, 126);
+}
+
+.info > * {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  color: rgb(126, 126, 126);
+  font-weight: 400;
+}
+
+.info p:nth-child(2) {
+  color: black;
+  font-size: 2em;
+}
+
+main > img {
+  width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: -5px -5px 15px white inset;
+}
+
+.price {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 0 0 auto;
+  justify-content: start;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.price div:first-child {
+  color: rgb(99, 145, 99);
+  font-size: 2em;
+  margin-right: 8px;
+}
+
+.price div:last-child {
+  text-decoration: line-through;
+}
+
+button {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  background: rgb(99, 145, 99);
+  color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  gap: 10px;
+  height: 50px;
+}
+
+.btn {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+  background: rgb(82, 119, 82);
+}
+
+.info img:last-child {
+  height: 1rem;
+}/*# sourceMappingURL=style.css.map */
