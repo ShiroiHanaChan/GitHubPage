@@ -1,0 +1,133 @@
+/* VARIABLES */
+@import url(../normalize-shiroi.css);
+
+$color-main: black;
+$color-light: rgb(126, 126, 126);
+$color-accent: rgb(99, 145, 99);
+
+/* MIXINS */
+
+@mixin flex ($c-or-r, $gr, $j-c, $a-i) {
+    display: flex;
+    flex-flow: $c-or-r nowrap;
+    flex: $gr 0 auto;
+
+    justify-content: $j-c;
+    align-items: $a-i;
+  }
+
+/* BODY */
+
+body {
+    background-color: lightpink;
+    margin: auto;
+    padding: 150px 0px;
+
+    @include flex(column, 0, center, center);
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    font-size: 1rem;
+    
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+
+    justify-content: space-evenly;
+    align-items: start;
+
+    padding: 0px 10px;
+    line-height: 1;
+
+    max-width: 100%; // Ensure the div doesn't expand beyond its container
+    overflow-wrap: break-word; // Break long words to fit within the container
+    word-wrap: break-word; // Support for older browsers
+    overflow: hidden; // Hide any overflow content
+}
+
+.info p {
+    overflow-wrap: break-word; // Break long words to fit within the container
+    word-wrap: break-word; // Support for older browsers
+    color: $color-light;
+}
+
+.info > * {
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    color: $color-light;
+    font-weight: 400;
+}
+
+.info p:nth-child(2) {
+    color: $color-main;
+    font-size: 2em;
+}
+
+main > img {
+    width: 250px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: -5px -5px 15px white inset;
+}
+
+.price {
+    @include flex(row, 0, start, center);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+}
+
+.price div:first-child {
+    color: $color-accent;
+    font-size: 2em;
+    margin-right: 8px;
+}
+
+.price div:last-child {
+    text-decoration: line-through;
+}
+
+button {
+    @include flex(row, 1, center, center);
+    max-width: 100%;
+    background: $color-accent;
+    color: white;
+
+    border: 1px solid black;
+    border-radius: 8px;
+   
+    gap: 10px;
+    height: 50px;
+}
+
+.btn {
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row nowrap;
+
+    width: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+    background: rgb(82, 119, 82);
+}
+
+.info img:last-child {
+    height: 1rem;
+}
