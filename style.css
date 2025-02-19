@@ -23,14 +23,10 @@ h1, p, li, a {
 
     background-clip: text;
     color: transparent;
-    /* -webkit-text-stroke: px black; */
+    -webkit-text-stroke: px black;
     text-decoration: none;
 
     margin: calc(8px + 1.5625vw) 0;
-}
-
-li {
-    text-decoration: underline;
 }
 
 /* ***** Main ***** */
