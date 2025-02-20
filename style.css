@@ -1,8 +1,11 @@
 /* ***** Reset Sheet ***** */
 @import url(normalize-shiroi.css);
-@import url();
 
 /* ***** General ***** */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: #fdfd96;
