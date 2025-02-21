@@ -59,6 +59,7 @@ html {
 
 button {
     @include button();
+    margin-block: var(--strd-pm);
 }
 
 html h1 {
@@ -87,7 +88,6 @@ html h1 {
     background-color: var(--clr-news);
 }
 
-/* ******************** FOOTER ******************** */
 
 /* ******************** WRAPPER ******************** */
 
@@ -135,7 +135,7 @@ html h1 {
     @include strd-pm();
 
     &.newsletter-main {
-        padding-block-end: 40px;
+        padding-block-end: 50px;
         background-color: var(--clr-warning);
         & h1 {
             padding: 0px;
@@ -146,12 +146,76 @@ html h1 {
 
 /* ******************** PARCEIROS ******************** */
 
-.article-parceiros {
-
-
-    @extend .img-parceiros-grid {
-        display: flex;
+.img-parceiros-grid {
+    /* Variables for grid */
+    --grid-from: 100px;
+    --grid-to: 1fr;
+    --grid-gap: 40px;
+    /* ****** GRID ****** */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-from), var(--grid-to)));
+    gap: var(--grid-gap);
+    align-items: center;
+    @include strd-pm();
+    /* ******* IMG ******* */
+    & img {
+        object-fit: contain;
+        max-width: 150px;
+        margin: auto;
     }
+}
+
+/* ******************** FOOTER ******************** */
+
+footer {
+    background-color: var(--clr-accent);
+    & .footer-links-grid {
+        /* Variables for padding and margin */
+        @mixin pad-mg ($pad: 0px, $mar: 0px) {
+            padding: 0px;
+            margin: 0px;
+        }
+        /* Variables for grid */
+        --grid-from: 200px;
+        --grid-to: 1fr;
+        --grid-gap: 20px;
+        /* ****************** */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(var(--grid-from), var(--grid-to)));
+        gap: var(--grid-gap);
+        @include strd-pm();
+        padding-inline: 6%;
+        color: var(--clr-light);
+        & .info-text {
+            & > * {
+                @include pad-mg($pad, $mar);
+            }
+            & a {
+                text-decoration: none;
+                color: var(--clr-light);
+            }
+            /* Red accents on the list items */
+            &  ul {list-style: none;}
+            & li::before {
+                content: '• ';
+                color: var(--clr-warning);
+            }
+        }
+        & .newsletter-last {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            & > * {
+                @include pad-mg($pad, $mar);
+            }
+        }
+        & .location-footer {
+            color: var(--clr-news);
+            & > * {
+                @include pad-mg($pad, $mar);
+            }
+        }
+        }
 }
 
 /* ******************** ACCESSABILITY ******************** */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ******************** IMPORTS ******************** */
 @import url(../normalize-shiroi.css);
 /* ******************** VARIABLES ******************** */
@@ -35,6 +36,7 @@ button {
   border: none;
   display: block;
   margin: auto;
+  margin-block: var(--strd-pm);
 }
 button:hover {
   cursor: pointer;
@@ -61,7 +63,6 @@ html h1 h2 {
   background-color: var(--clr-news);
 }
 
-/* ******************** FOOTER ******************** */
 /* ******************** WRAPPER ******************** */
 .wrapper {
   /* Variables for grid */
@@ -104,7 +105,7 @@ html h1 h2 {
   padding-block: var(--strd-pm);
 }
 .newsletter.newsletter-main {
-  padding-block-end: 40px;
+  padding-block-end: 50px;
   background-color: var(--clr-warning);
 }
 .newsletter.newsletter-main h1 {
@@ -113,6 +114,67 @@ html h1 h2 {
 }
 
 /* ******************** PARCEIROS ******************** */
+.img-parceiros-grid {
+  /* Variables for grid */
+  --grid-from: 100px;
+  --grid-to: 1fr;
+  --grid-gap: 40px;
+  /* ****** GRID ****** */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-from), var(--grid-to)));
+  gap: var(--grid-gap);
+  align-items: center;
+  padding-block: var(--strd-pm);
+  /* ******* IMG ******* */
+}
+.img-parceiros-grid img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 150px;
+  margin: auto;
+}
+
+/* ******************** FOOTER ******************** */
+footer {
+  background-color: var(--clr-accent);
+}
+footer .footer-links-grid {
+  /* Variables for padding and margin */
+  /* Variables for grid */
+  --grid-from: 200px;
+  --grid-to: 1fr;
+  --grid-gap: 20px;
+  /* ****************** */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-from), var(--grid-to)));
+  gap: var(--grid-gap);
+  padding-block: var(--strd-pm);
+  padding-inline: 6%;
+  color: var(--clr-light);
+}
+footer .footer-links-grid .info-text {
+  /* Red accents on the list items */
+}
+footer .footer-links-grid .info-text > * {
+  padding: 0px;
+  margin: 0px;
+}
+footer .footer-links-grid .info-text a {
+  text-decoration: none;
+  color: var(--clr-light);
+}
+footer .footer-links-grid .info-text ul {
+  list-style: none;
+}
+footer .footer-links-grid .info-text li::before {
+  content: "• ";
+  color: var(--clr-warning);
+}
+footer .footer-links-grid .newsletter-last {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
 /* ******************** ACCESSABILITY ******************** */
 .skip-content-link {
   position: absolute;
