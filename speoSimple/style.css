@@ -15,6 +15,7 @@
 }
 
 /* ******************** MIXINS ******************** */
+/* Variables for padding and margin */
 /* ******************** GENERAL ******************** */
 /* Stop img weirdness! */
 img {
@@ -44,9 +45,18 @@ button:hover {
 
 html h1 {
   text-align: center;
+  margin-block-end: 0;
 }
 html h1 h2 {
   color: var(--clr-accent);
+}
+
+input {
+  background-image: url(parceiros/mail.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-top: 10px;
 }
 
 /* ******************** HEADER ******************** */
@@ -139,7 +149,6 @@ footer {
   background-color: var(--clr-accent);
 }
 footer .footer-links-grid {
-  /* Variables for padding and margin */
   /* Variables for grid */
   --grid-from: 200px;
   --grid-to: 1fr;
@@ -152,12 +161,15 @@ footer .footer-links-grid {
   padding-inline: 6%;
   color: var(--clr-light);
 }
+footer .footer-links-grid > h1 {
+  font-size: 2rem;
+}
 footer .footer-links-grid .info-text {
-  /* Red accents on the list items */
+  position: relative;
 }
 footer .footer-links-grid .info-text > * {
-  padding: 0px;
-  margin: 0px;
+  padding-block: 0px;
+  margin: 10px;
 }
 footer .footer-links-grid .info-text a {
   text-decoration: none;
@@ -167,14 +179,29 @@ footer .footer-links-grid .info-text ul {
   list-style: none;
 }
 footer .footer-links-grid .info-text li::before {
+  /* Red accents on the list items */
   content: "• ";
   color: var(--clr-warning);
+  position: absolute;
+  left: -0.5rem;
 }
 footer .footer-links-grid .newsletter-last {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
+footer .footer-links-grid .newsletter-last > * {
+  padding-block: 0px;
+  margin: 10px;
+}
+footer .footer-links-grid .location-footer {
+  color: var(--clr-news);
+}
+footer .footer-links-grid .location-footer > * {
+  padding-block: 0px;
+  margin: 10px;
+}
+
 /* ******************** ACCESSABILITY ******************** */
 .skip-content-link {
   position: absolute;
@@ -191,4 +218,52 @@ footer .footer-links-grid .newsletter-last {
 }
 .skip-content-link:focus {
   transform: translateY(-950%);
+}
+
+.icons-with-octagons {
+  /* Let's set the rules for the grid! */
+  display: grid;
+  grid-template-areas: "a . c" "a . c" "a b c" ". b ." ". b .";
+  /* Set area names! */
+}
+.icons-with-octagons > :nth-child(1) {
+  grid-area: a;
+}
+.icons-with-octagons > :nth-child(2) {
+  grid-area: b;
+}
+.icons-with-octagons > :nth-child(3) {
+  grid-area: c;
+}
+.icons-with-octagons > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  position: relative;
+  width: 3rem;
+  height: 3em;
+  aspect-ratio: 1;
+  background-color: var(--clr-light);
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  z-index: 100;
+}
+.icons-with-octagons > *:hover {
+  background-color: skyblue;
+  color: skyblue;
+  cursor: pointer;
+}
+.icons-with-octagons > * > * {
+  display: block;
+  text-align: center;
+  font-size: 120%;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0.8rem;
+  margin: auto;
+  background-color: var(--clr-accent);
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  z-index: 100;
 }/*# sourceMappingURL=style.css.map */

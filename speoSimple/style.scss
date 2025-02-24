@@ -19,12 +19,19 @@
 
 /* ******************** MIXINS ******************** */
 
-@mixin text-formatting ($position) {
+@mixin text-formatting ($position, $mar) {
     text-align: $position;
+    margin-block-end: $mar;
 }
 
 @mixin strd-pm {
     padding-block: var(--strd-pm);
+}
+
+/* Variables for padding and margin */
+@mixin pad-mg ($pad: 0px, $mar: 0px) {
+    padding-block: $pad;
+    margin: $mar;
 }
 
 @mixin button ($bg-color: var(--clr-warning), $txt-color: var(--clr-light)) {
@@ -63,10 +70,22 @@ button {
 }
 
 html h1 {
-    @include text-formatting(center);
+    @include text-formatting(center, 0);
     & h2 {
         color: var(--clr-accent);
     }
+}
+
+input {
+    background-image: url(parceiros/mail.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-top: 10px;
+}
+
+footer ul {
+    padding-inline-start: 0px;
 }
 
 /* ******************** HEADER ******************** */
@@ -170,11 +189,6 @@ html h1 {
 footer {
     background-color: var(--clr-accent);
     & .footer-links-grid {
-        /* Variables for padding and margin */
-        @mixin pad-mg ($pad: 0px, $mar: 0px) {
-            padding: 0px;
-            margin: 0px;
-        }
         /* Variables for grid */
         --grid-from: 200px;
         --grid-to: 1fr;
@@ -186,19 +200,25 @@ footer {
         @include strd-pm();
         padding-inline: 6%;
         color: var(--clr-light);
+        }
         & .info-text {
+            position: relative;
             & > * {
-                @include pad-mg($pad, $mar);
+                @include pad-mg(0px, 10px);
             }
             & a {
                 text-decoration: none;
                 color: var(--clr-light);
             }
-            /* Red accents on the list items */
-            &  ul {list-style: none;}
+            
+            &  ul {list-style: none;
+                    padding-inline-start: 0px;}
             & li::before {
-                content: '• ';
+                /* Red accents on the list items */
+                content: '•';
                 color: var(--clr-warning);
+                position: absolute;
+                left: -0.1rem;
             }
         }
         & .newsletter-last {
@@ -206,13 +226,13 @@ footer {
             flex-flow: column nowrap;
             align-items: center;
             & > * {
-                @include pad-mg($pad, $mar);
+                @include pad-mg(0px, 10px);
             }
         }
         & .location-footer {
             color: var(--clr-news);
             & > * {
-                @include pad-mg($pad, $mar);
+                @include pad-mg(0px, 10px);
             }
         }
         }
@@ -241,3 +261,62 @@ footer {
         transform: translateY(-950%);
     }
 }
+
+    .icons-with-octagons {
+        /* Let's set the rules for the grid! */
+        display: grid;
+        grid-template-areas: 
+        'a . c'
+        'a . c'
+        'a b c'
+        '. b .'
+        '. b .';
+        /* Set area names! */
+        & > :nth-child(1) {
+            grid-area: a;
+        }
+        & > :nth-child(2) {
+            grid-area: b;
+        }
+        & > :nth-child(3) {
+            grid-area: c;
+        }
+        & > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .1rem;
+            position: relative;
+            width: 3rem;
+            height: 3em;
+            aspect-ratio: 1;
+            background-color: var(--clr-light);
+
+            clip-path: polygon(
+            25% 0%, 75% 0%, 
+            100% 50%, 75% 100%, 
+            25% 100%, 0% 50%);
+            z-index: 100;
+            &:hover {
+                background-color: skyblue;
+                color: skyblue;
+                cursor: pointer;
+            }
+            & > * {
+                display: block;
+                text-align: center;
+                font-size: 120%;
+                width: 100%;
+                aspect-ratio: 1;
+                padding: .8rem;
+                margin: auto;
+                background-color: var(--clr-accent);
+
+                clip-path: polygon(
+                25% 0%, 75% 0%, 
+                100% 50%, 75% 100%, 
+                25% 100%, 0% 50%);
+                z-index: 100;
+            }
+        }
+    }
