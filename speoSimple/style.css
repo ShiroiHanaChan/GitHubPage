@@ -59,7 +59,21 @@ input {
   margin-top: 10px;
 }
 
+footer ul {
+  padding-inline-start: 0px;
+}
+
 /* ******************** HEADER ******************** */
+header {
+  height: 90vh;
+  background-color: var(--clr-accent);
+  background-image: url(images/coracaoGr.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* TEMP */
+  color: white;
+}
+
 /* ******************** MAIN ******************** */
 .article {
   padding-inline: 6%;
@@ -161,43 +175,44 @@ footer .footer-links-grid {
   padding-inline: 6%;
   color: var(--clr-light);
 }
-footer .footer-links-grid > h1 {
-  font-size: 2rem;
-}
-footer .footer-links-grid .info-text {
+footer .info-text {
   position: relative;
 }
-footer .footer-links-grid .info-text > * {
-  padding-block: 0px;
+footer .info-text > * {
+  padding-block: 2px;
   margin: 10px;
 }
-footer .footer-links-grid .info-text a {
+footer .info-text a {
   text-decoration: none;
   color: var(--clr-light);
 }
-footer .footer-links-grid .info-text ul {
+footer .info-text ul {
   list-style: none;
+  padding-inline-start: 0px;
 }
-footer .footer-links-grid .info-text li::before {
+footer .info-text ul > * {
+  margin-block: 8px;
+}
+footer .info-text li::before {
   /* Red accents on the list items */
-  content: "• ";
+  content: "•";
   color: var(--clr-warning);
   position: absolute;
-  left: -0.5rem;
+  left: -0.1rem;
 }
-footer .footer-links-grid .newsletter-last {
+footer .newsletter-last {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
-footer .footer-links-grid .newsletter-last > * {
+footer .newsletter-last > * {
   padding-block: 0px;
   margin: 10px;
 }
-footer .footer-links-grid .location-footer {
+footer .location-footer {
   color: var(--clr-news);
 }
-footer .footer-links-grid .location-footer > * {
+footer .location-footer > * {
   padding-block: 0px;
   margin: 10px;
 }

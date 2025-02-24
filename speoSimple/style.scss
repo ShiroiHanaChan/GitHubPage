@@ -90,7 +90,15 @@ footer ul {
 
 /* ******************** HEADER ******************** */
 
-
+header {
+    height: 90vh;
+    background-color: var(--clr-accent);
+    background-image: url(images/coracaoGr.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* TEMP */
+    color: white;
+}
 
 /* ******************** MAIN ******************** */
 
@@ -204,21 +212,27 @@ footer {
         & .info-text {
             position: relative;
             & > * {
-                @include pad-mg(0px, 10px);
+                @include pad-mg(2px, 10px);
             }
             & a {
                 text-decoration: none;
                 color: var(--clr-light);
+                
             }
             
             &  ul {list-style: none;
-                    padding-inline-start: 0px;}
+                    padding-inline-start: 0px;
+                & > * {
+                    margin-block: 8px;
+                }
+            }
             & li::before {
                 /* Red accents on the list items */
                 content: '•';
                 color: var(--clr-warning);
                 position: absolute;
                 left: -0.1rem;
+                
             }
         }
         & .newsletter-last {
@@ -235,8 +249,7 @@ footer {
                 @include pad-mg(0px, 10px);
             }
         }
-        }
-}
+    }
 
 /* ******************** ACCESSABILITY ******************** */
 
