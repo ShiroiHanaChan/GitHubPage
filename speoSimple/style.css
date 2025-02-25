@@ -160,8 +160,11 @@ footer ul {
 /* ******************** NAV ******************** */
 .nav-bar-grid {
   color: var(--clr-light);
-  height: 10vh;
   display: grid;
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   background-color: var(--clr-accent);
@@ -325,6 +328,7 @@ footer ul {
   gap: var(--grid-gap);
   align-items: center;
   padding-block-start: var(--strd-pm);
+  padding-block-end: var(--strd-pm);
   /* ******* IMG ******* */
 }
 .img-parceiros-grid img {

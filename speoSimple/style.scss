@@ -187,11 +187,15 @@ footer ul {
 
     .nav-bar-grid {
         color: var(--clr-light);
-        height: 10vh;
         display: grid;
+        position: sticky;
+        top: 0;
+        height: 10vh;
+        width: 100%;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
         background-color: var(--clr-accent);
+        z-index: 100000000;
         & .SPEO-logo {
             border: 1rem solid transparent;
             background-image: url(images/LogotipoSPEO.png);
@@ -202,7 +206,6 @@ footer ul {
         & > * {
             display: flex;
         }
-        z-index: 100000000;
     }
 
     .nav-tabs-flex {
@@ -330,6 +333,7 @@ footer ul {
     gap: var(--grid-gap);
     align-items: center;
     @include strd-pm();
+    padding-block-end: var(--strd-pm);
     /* ******* IMG ******* */
     & img {
         object-fit: contain;
