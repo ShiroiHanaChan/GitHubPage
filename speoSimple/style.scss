@@ -1,6 +1,12 @@
 /* ******************** IMPORTS ******************** */
 @import url(../normalize-shiroi.css);
 
+/* ******************** TOOLS ******************** */
+/* 
+    https://bennettfeely.com/clippy/
+    https://fontawesome.com/
+ */
+
 /* ******************** VARIABLES ******************** */
 
 :root {
@@ -10,11 +16,17 @@
     --clr-light: #ffffff; // Background
     --clr-dark: #666666; // Text
 
+    /* Default font size */
+    --fnt-size: 1rem;
+
     /* Transition timer */
     --trns-timer: 0.5s;
 
     /* Padding and Margin */
     --strd-pm: 30px;
+
+    /* CSS Magic formula */
+    --magic: calc(8px + 1.5625vw);
 }
 
 /* ******************** MIXINS ******************** */
@@ -25,7 +37,7 @@
 }
 
 @mixin strd-pm {
-    padding-block: var(--strd-pm);
+    padding-block-start: var(--strd-pm);
 }
 
 /* Variables for padding and margin */
@@ -71,9 +83,11 @@ button {
 
 html h1 {
     @include text-formatting(center, 0);
-    & h2 {
-        color: var(--clr-accent);
-    }
+    padding-block-end: 0px;
+    text-transform: uppercase;  
+}
+html h2 {
+    margin: 0%;
 }
 
 input {
@@ -88,18 +102,149 @@ footer ul {
     padding-inline-start: 0px;
 }
 
+.h1-bottom {
+    display: block;
+    height: calc(var(--font-size)*.2);
+    width: calc(var(--font-size)*3);
+    background-color: var(--clr-warning);
+    margin: auto;
+    margin-block-end: var(--strd-pm);
+}
+
+.h2-bottom {
+    display: block;
+    height: calc(var(--font-size)*.2);
+    width: calc(var(--font-size)*2);
+    background-color: var(--clr-warning);
+    margin-block-end: var(--strd-pm);
+}
+
 /* ******************** HEADER ******************** */
 
-header {
+.main-header-flex-reverse {
     height: 90vh;
-    background-color: var(--clr-accent);
-    background-image: url(images/coracaoGr.jpg);
+    /* background-color: var(--clr-accent); */
+    background: rgba(0,0,0,0.325)url(images/alimentacaoGr.jpg);
+    background-blend-mode: darken;
     background-repeat: no-repeat;
     background-position: center;
     /* TEMP */
     color: white;
+    /* Display */
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    flex: 1 1 auto;
+    /* Justify */
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    & p {
+        margin-block-start: 0px;
+        margin-block-end: 18vh;
+    }
+    & > * {
+        margin-block: calc(32px + 1.5625vw);
+    }
+    & > :last-child {
+        width: 60%;
+        margin-block: 0px;
+    }
 }
 
+.mouse-tabs-grid {
+    --mouse-pad: 20px;
+    --mouse-width: 50px;
+    width: 100%;
+    margin-block-end: 0px;
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr;
+    align-items: center;
+    & > img {
+        padding-inline: var(--mouse-pad);
+    }
+    & > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        height: 100%;
+        margin: 0px;
+        transition: background-color var(--trns-timer) ease;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+        & > :first-child {
+                clip-path: polygon(0 0, 90% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+            }
+            & > :last-child {
+                clip-path: polygon(10% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+            }
+}   
+
+/* ******************** NAV ******************** */
+
+    .nav-bar-grid {
+        color: var(--clr-light);
+        height: 10vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        background-color: var(--clr-accent);
+        & .SPEO-logo {
+            border: 1rem solid transparent;
+            background-image: url(images/LogotipoSPEO.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: contain;
+        }
+        & > * {
+            display: flex;
+        }
+        z-index: 100000000;
+    }
+
+    .nav-tabs-flex {
+        --element-border-height: .5rem;
+        position: relative;
+        /* Display Flex */
+        display: flex;
+        align-items: end;
+        @for $i from 1 to 5 {
+            & > *:nth-child(#{$i}) {
+                display: block;
+                margin-inline: auto;
+                margin-block: 0px;
+                border-bottom: var(--element-border-height) solid transparent;
+                transition: border-bottom var(--trns-timer) ease;
+                &:hover {
+                    border-bottom: var(--element-border-height) solid var(--clr-warning);
+                    cursor: pointer;
+                }
+            }
+        }
+        & .language-selected {
+            --calc-formula: 0.6;
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            margin: 0px;
+            /* Styling */
+            background-color: var(--clr-warning);
+            padding: calc(var(--fnt-size)*var(--calc-formula));
+            border-bottom-right-radius: 25%;
+            border-bottom-left-radius: 25%;
+            font-size: calc(var(--fnt-size)*var(--calc-formula));
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        & :nth-child(4) {
+            margin-inline-start: 15%;
+        }
+    }
+    
 /* ******************** MAIN ******************** */
 
 .article {
@@ -151,6 +296,7 @@ header {
     }
     &:hover {
         box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1), -5px -5px 5px white;
+        cursor: pointer;
     }
 }
 
@@ -255,7 +401,7 @@ footer {
 
 .skip-content-link {
     position: absolute;
-    transform: translateY(-1250%);
+    transform: translateY(-100%);
 
     background-color: aliceblue;
     margin-inline-start: 30px;
@@ -271,7 +417,7 @@ footer {
     transition: transform var(--trns-timer) ease-in;
 
     &:focus {
-        transform: translateY(-950%);
+        transform: translateY(-0%);
     }
 }
 
