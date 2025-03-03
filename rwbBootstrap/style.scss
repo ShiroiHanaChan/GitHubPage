@@ -1,6 +1,5 @@
 /* ************************* IMPORT ******************** */
 @use 'sass:list';
-@import url(../normalize-shiroi.css);
 
 /* ************************* VARIABLES ******************** */
 
@@ -39,6 +38,7 @@
   border-radius: 5px;
   margin-bottom: var(--magic-css);
   width: $width;
+  display: block;
 }
 
 button {
@@ -70,17 +70,21 @@ body {
 
 .navbar-main-grid {
   /* Grid */
-  display: grid;
+  /* display: grid;
+  grid-template-columns: 170px 1fr 60px; */
+  display: flex;
   align-items: center;
-  grid-template-columns: 170px 1fr 60px;
+  padding: var(--magic-css);
+  justify-content: space-evenly;
 
   height: 60px;
   width: 100%;
   background-color: var(--clr-success);
+  border-bottom: 2px solid var(--clr-info);
   padding: 0.8em;
 
-  position: sticky;
-  top: 0px;
+  /* position: sticky;
+  top: 0px; */
 
   & > * {
     cursor: pointer;
@@ -91,17 +95,23 @@ body {
     list-style: none;
     display: flex;
     justify-content: space-around;
-
+    flex-direction: row;
+    flex: 1;
     @for $i from 1 to 6 {
       :nth-child(#{$i}) {
         display: none;
       }
     }
-  }
-
-  @media screen and (min-width: 768px) {
-    ul>* {
-      display: visible;
+    @media screen and (min-width: 768px) {
+      @for $i from 1 to 6 {
+        :nth-child(#{$i}) {
+          display: inline;
+          font-weight: 700;
+          &:last-child {
+            gap: auto; 
+          }
+        }
+      }
     }
   }
 }
@@ -110,12 +120,19 @@ body {
   @include background-icons(url(images/ui/Logo.png), contain, left);
   width: 100%;
   height: 100%;
+  flex: 0;
+  flex-basis: 160px;
 }
 
 .nav-burger {
   @include background-icons(url(images/burger-solid.svg), contain, right);
   width: 100%;
   height: 100%;
+  flex: 0;
+  flex-basis: 160px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 /* ************************* MAIN ******************** */
@@ -125,30 +142,59 @@ article {
   word-wrap: break-word;
 }
 
+.card-auto-grid {
+  @include strd-pad-mar();
+  display: grid;
+  /* Assign areas */
+  @for $i from 1 to 5 {
+    & > section:nth-child(#{$i}) {
+      grid-area: list.nth((a, b, c, d), $i);
+    }
+  }
+  /* Grid breakpoints */
+  grid-template-areas:
+  'a'
+  'b'
+  'c'
+  'd';
+  @media screen and (min-width: 768px) {
+    grid-template-areas: 
+    'a b'
+    'c d';
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-areas: 
+    'a b c d';
+  }
+  gap: 20px;
+}
+
 .banner-block-border {
   @include strd-pad-mar();
   background-color: var(--clr-info);
-  @include background-icons(
-    rgba(0, 0, 0, 0.4) url(images/landing-page-banner.jpg),
-    cover,
-    center
-  );
+  @include background-icons(rgba(0, 0, 0, 0.4) url(images/landing-page-banner.jpg), cover, center);
   background-blend-mode: darken;
   border: none;
   border-radius: 10px;
-}
-
-section {
-  @include strd-pad-mar();
-  /* ***** Assign the backgrounds ***** */
-  /* $list: 'url(images/grid/grid-col-1.png)', 'url(images/grid/grid-col-2.png)', 'url(images/grid/grid-col-3.png)', 'url(images/grid/grid-col-4.png)'; */
-  @for $i from 1 to 5 {
-    .img-#{$i} {
-      @include background-icons(url(images/grid/grid-col-#{$i}.png), contain, center);
+  
+  @media screen and (width > 768px) {
+      & > p {
+        width: 45%;
+      } 
     }
   }
-  /* Remove the titles */
-  & h1 {display: none;}
+  
+  section {
+    padding: var(--magic-css);
+    /* ***** Assign the backgrounds ***** */
+    @for $i from 1 to 5 {
+      .img-#{$i} {
+        @include background-icons(url(images/grid/grid-col-#{$i}.png), contain, center);
+      }
+    }
+    
+    /* Remove the titles */
+    & h1 {display: none;}
   /* Grid */
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -171,17 +217,17 @@ footer {
   > p {display: none;}
   /* Display */
   display: flex;
+  width: 100%;
   justify-content: center;
   background-color: var(--clr-accent);
-  position: sticky;
-  bottom: 0px;
+  /* Since in the mockup image the cards are cut off by the footer, I imagine it's due to a sticky property! */
   /* List styling */
   & ul {
     list-style: none;
     padding: 0px;
     justify-content: center;
     display: flex;
-    gap: var(--magic-css);
+    gap: 10px;
   }
 }
 
