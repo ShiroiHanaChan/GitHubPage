@@ -1,4 +1,5 @@
 /* ************************* IMPORT ******************** */
+@use 'variables' as *;
 @use 'sass:list';
 
 /* ************************* VARIABLES ******************** */
@@ -11,6 +12,7 @@
   --clr-accent: #222222;
   --clr-info: #636363;
   --clr-title: #0a2a52;
+  --clr-choice: #d26510;
 
   --magic-css: 8px + calc(1.5625vw);
 }
@@ -117,7 +119,7 @@ body {
 }
 
 .nav-logo {
-  @include background-icons(url(images/ui/Logo.png), contain, left);
+  @include background-icons(url(../images/ui/Logo.png), contain, left);
   width: 100%;
   height: 100%;
   flex: 0;
@@ -125,7 +127,7 @@ body {
 }
 
 .nav-burger {
-  @include background-icons(url(images/burger-solid.svg), contain, right);
+  @include background-icons(url(../images/burger-solid.svg), contain, right);
   width: 100%;
   height: 100%;
   flex: 0;
@@ -167,12 +169,35 @@ article {
     'a b c d';
   }
   gap: 20px;
+  & section {
+    padding: var(--magic-css);
+    /* ***** Assign the backgrounds ***** */
+    @for $i from 1 to 5 {
+      .img-#{$i} {
+        @include background-icons(url(../images/grid/grid-col-#{$i}.png), contain, center);
+      }
+    }
+    /* Remove the titles */
+    & h1 {display: none;}
+    /* Grid */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    height: 300px;
+    color: var(--clr-info);
+    & .text-info {
+      display: flex;
+      flex-direction: column;
+      & button {
+        margin: auto;
+      }
+    }
+  }
 }
 
 .banner-block-border {
   @include strd-pad-mar();
   background-color: var(--clr-info);
-  @include background-icons(rgba(0, 0, 0, 0.4) url(images/landing-page-banner.jpg), cover, center);
+  @include background-icons(rgba(0, 0, 0, 0.4) url(../images/landing-page-banner.jpg), cover, center);
   background-blend-mode: darken;
   border: none;
   border-radius: 10px;
@@ -182,31 +207,10 @@ article {
         width: 45%;
       } 
     }
-  }
-  
-  section {
-    padding: var(--magic-css);
-    /* ***** Assign the backgrounds ***** */
-    @for $i from 1 to 5 {
-      .img-#{$i} {
-        @include background-icons(url(images/grid/grid-col-#{$i}.png), contain, center);
-      }
-    }
-    
-    /* Remove the titles */
-    & h1 {display: none;}
-  /* Grid */
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  height: 300px;
-  color: var(--clr-info);
-  & .text-info {
-    display: flex;
-    flex-direction: column;
-    & button {
-      margin: auto;
-    }
-  }
+}
+
+section {
+    color: var(--clr-info);
 }
 
 /* ************************* FOOTER ******************** */

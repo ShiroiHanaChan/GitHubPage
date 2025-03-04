@@ -1,0 +1,56 @@
+:root {
+  /* Color palette */
+  --clr-success: #79c09d;
+  --clr-warning: #d36509;
+  --clr-light: #ffffff;
+  --clr-accent: #222222;
+  --clr-info: #636363;
+  --clr-title: #0a2a52;
+  --magic-css: 8px + calc(1.5625vw);
+}
+
+/* ************************* MIXINS ******************** */
+.main-info-flex, .grid-q-a-a {
+  display: grid;
+  width: 85%;
+  margin: 20px auto;
+}
+
+.grid-q-a-a {
+  border: 1px solid var(--clr-info);
+}
+
+.choice > p {
+  padding: 10px;
+  margin: 0px;
+}
+.choice > p:active {
+  color: var(--clr-light);
+  background-color: var(--clr-choice);
+}
+
+.choice-info {
+  padding-inline: 10px;
+  border-block-start: 1px solid var(--clr-info);
+  background-color: #efefef;
+}
+
+.info-area > h1 {
+  color: var(--clr-choice);
+}
+.info-area h1, .info-area p:first-of-type {
+  font-weight: 700;
+}
+
+.bg-img {
+  background: url(../images/article-banner.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+  border-radius: 10px;
+  /* Mobile */
+  height: 150px;
+  width: 100%;
+}/*# sourceMappingURL=articles.css.map */

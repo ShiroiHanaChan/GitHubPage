@@ -1,0 +1,37 @@
+:root {
+  /* Color palette */
+  --clr-success: #79c09d;
+  --clr-warning: #d36509;
+  --clr-light: #ffffff;
+  --clr-accent: #222222;
+  --clr-info: #636363;
+  --clr-title: #0a2a52;
+
+  --magic-css: 8px + calc(1.5625vw);
+}
+
+/* ************************* MIXINS ******************** */
+
+@mixin strd-pad-mar($pad: calc(8px + 1.5625vw), $mar: calc(8px + 1.5625vw)) {
+  padding: $pad;
+  margin: $mar;
+}
+
+@mixin background-icons($url, $contain, $side) {
+  background: $url;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $contain;
+  background-position: $side;
+  border: 0.1em solid transparent;
+}
+
+@mixin button($color: var(--clr-success), $width: auto) {
+  border: 3px solid $color;
+  color: $color;
+  background-color: transparent;
+  border-radius: 5px;
+  margin-bottom: var(--magic-css);
+  width: $width;
+  display: block;
+}

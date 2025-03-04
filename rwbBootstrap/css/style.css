@@ -1,4 +1,16 @@
 /* ************************* IMPORT ******************** */
+:root {
+  /* Color palette */
+  --clr-success: #79c09d;
+  --clr-warning: #d36509;
+  --clr-light: #ffffff;
+  --clr-accent: #222222;
+  --clr-info: #636363;
+  --clr-title: #0a2a52;
+  --magic-css: 8px + calc(1.5625vw);
+}
+
+/* ************************* MIXINS ******************** */
 /* ************************* VARIABLES ******************** */
 :root {
   /* Color palette */
@@ -8,6 +20,7 @@
   --clr-accent: #222222;
   --clr-info: #636363;
   --clr-title: #0a2a52;
+  --clr-choice: #d26510;
   --magic-css: 8px + calc(1.5625vw);
 }
 
@@ -129,7 +142,7 @@ body {
 }
 
 .nav-logo {
-  background: url(images/ui/Logo.png);
+  background: url(../images/ui/Logo.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -142,7 +155,7 @@ body {
 }
 
 .nav-burger {
-  background: url(images/burger-solid.svg);
+  background: url(../images/burger-solid.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -196,12 +209,64 @@ article {
     grid-template-areas: "a b c d";
   }
 }
+.card-auto-grid section {
+  padding: var(--magic-css);
+  /* ***** Assign the backgrounds ***** */
+  /* Remove the titles */
+  /* Grid */
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  height: 300px;
+  color: var(--clr-info);
+}
+.card-auto-grid section .img-1 {
+  background: url(../images/grid/grid-col-1.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section .img-2 {
+  background: url(../images/grid/grid-col-2.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section .img-3 {
+  background: url(../images/grid/grid-col-3.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section .img-4 {
+  background: url(../images/grid/grid-col-4.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section h1 {
+  display: none;
+}
+.card-auto-grid section .text-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-auto-grid section .text-info button {
+  margin: auto;
+}
 
 .banner-block-border {
   padding: calc(8px + 1.5625vw);
   margin: calc(8px + 1.5625vw);
   background-color: var(--clr-info);
-  background: rgba(0, 0, 0, 0.4) url(images/landing-page-banner.jpg);
+  background: rgba(0, 0, 0, 0.4) url(../images/landing-page-banner.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -218,56 +283,7 @@ article {
 }
 
 section {
-  padding: var(--magic-css);
-  /* ***** Assign the backgrounds ***** */
-  /* Remove the titles */
-  /* Grid */
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  height: 300px;
   color: var(--clr-info);
-}
-section .img-1 {
-  background: url(images/grid/grid-col-1.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: 0.1em solid transparent;
-}
-section .img-2 {
-  background: url(images/grid/grid-col-2.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: 0.1em solid transparent;
-}
-section .img-3 {
-  background: url(images/grid/grid-col-3.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: 0.1em solid transparent;
-}
-section .img-4 {
-  background: url(images/grid/grid-col-4.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: 0.1em solid transparent;
-}
-section h1 {
-  display: none;
-}
-section .text-info {
-  display: flex;
-  flex-direction: column;
-}
-section .text-info button {
-  margin: auto;
 }
 
 /* ************************* FOOTER ******************** */
