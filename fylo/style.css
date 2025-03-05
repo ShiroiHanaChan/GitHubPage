@@ -1,0 +1,197 @@
+/* ************************* IMPORT ******************** */
+@import url(../normalize-shiroi.css);
+@import url(https://fonts.bunny.net/css?family=raleway:400,700);
+/* ************************* VARIABLES ******************** */
+:root {
+  /* Widths */
+  --width-mobile: 375px;
+  --width-desktop: 1024px;
+  /* Colors */
+  --bar-gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --vdark-blue: hsl(229, 57%, 11%);
+  /* Font */
+  --font-size: 14px;
+  --font-family: "Raleway", sans-serif;
+  --weight-normal: 400;
+  --weight-bold: 700;
+}
+
+/* ************************* MIXINS ******************** */
+/* ************************* MAIN ******************** */
+html {
+  /* General */
+  width: 100%;
+  height: 100%;
+  color: var(--grayish-blue);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--weight-normal);
+  /* Mobile first! */
+  background-image: url(images/bg-mobile.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    background-image: url(images/bg-desktop.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+main {
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+  /* temp */
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  flex: 1;
+  /*  */
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    flex-flow: row nowrap;
+    align-items: flex-end;
+  }
+}
+/* ************************* Main Upload Flex ******************** */
+.main-upload-flex {
+  width: var(--width-mobile);
+  background-color: var(--dark-blue);
+  padding: 1rem 3rem;
+  border-radius: 15px;
+  border-top-right-radius: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  justify-content: flex-start;
+}
+.main-upload-flex .bg-img {
+  background-image: url(images/logo.svg);
+  background-size: fill;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 200px;
+}
+.main-upload-flex .widget-selection {
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+}
+.main-upload-flex .widget-selection p {
+  background-color: var(--vdark-blue);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: background-color 0.5s ease;
+}
+.main-upload-flex .widget-selection p:hover {
+  background-color: var(--pale-blue);
+  cursor: pointer;
+}
+
+/* ************************* Main Info Area ******************** */
+.main-info-area {
+  position: relative;
+  width: var(--width-mobile);
+  background-color: var(--dark-blue);
+  padding: 1rem 3rem;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  justify-content: flex-start;
+}
+.main-info-area > p:first-of-type {
+  text-align: center;
+}
+.main-info-area > p:first-of-type span {
+  color: var(--pale-blue);
+}
+
+.anchored {
+  color: gray;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 6px;
+  gap: 5px;
+}
+.anchored span {
+  font-size: 2.5em;
+  color: black;
+  font-weight: var(--weight-bold);
+}
+
+@media screen and (min-width: 1024px) {
+  .anchored {
+    position: absolute;
+    top: 0;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 85% 92%, 0 90%);
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 85% 92%, 0 90%);
+  }
+  .main-info-area > p:first-of-type {
+    text-align: start;
+  }
+}
+.metered-bar .data {
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 100%;
+  border: 2px solid var(--vdark-blue);
+  background-color: var(--vdark-blue);
+  border-radius: 20px;
+}
+.metered-bar .data-used {
+  z-index: 10000;
+  width: 81.5%;
+  height: 16px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(192, 255, 212) 0%, rgb(151, 183, 186) 51%, rgb(225, 51, 116) 100%);
+  border-radius: 16px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.metered-bar .data-used .ball {
+  z-index: 100000;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: white;
+}
+.metered-bar .p-anchor {
+  display: flex;
+  justify-content: space-between;
+  color: var(--pale-blue);
+  font-weight: var(--weight-bold);
+}
+
+/* ************************* TOOLS ******************** */
+/* 
+https://fonts.bunny.net/
+ *//*# sourceMappingURL=style.css.map */
