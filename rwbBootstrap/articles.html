@@ -4,25 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebDesign</title>
-    <link rel="stylesheet" href="css/linked.css"/>
+    <link rel="stylesheet" href="css/css/links.css" />
   </head>
   <body>
-    <header></header>
-    <main>
+    <header>
       <nav class="navbar-main-grid">
         <div class="nav-logo"></div>
         <ul class="flexible-links">
-          <li>New Features</li>
+          <a href="index.html"><li>New Features</li></a>
           <li>Gallery</li>
           <li>Articles</li>
           <li>Contact</li>
         </ul>
-        <div class="nav-burger"></div>
+        <div class="nav-burger">
+          <ul class="tasty-menu">
+            <li>New Features</li>
+            <li>Gallery</li>
+            <li>Articles</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       </nav>
+    </header>
 
+    <main class="article-grid-layout">
       <article class="main-info-area">
         <section class="main-info-flex">
-          <div class="bg-img"></div>
+          <figure class="bg-img">
+            <img src="images/article-banner.jpg" alt="">
+          </figure>
           <div class="info-area">
             <h1>Where does it come from?</h1>
             <p><b>By Lipsum.com</b></p>
@@ -46,6 +56,7 @@
           </div>
         </section>
       </article>
+    </main>
 
       <footer>
         <p>Learn to build websites using CSS</p>
@@ -58,7 +69,7 @@
         </div>
       </footer>
       
-    </main>
+    
       
     <script
       src="https://kit.fontawesome.com/ab7959eada.js"

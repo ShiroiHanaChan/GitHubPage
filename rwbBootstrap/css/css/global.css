@@ -1,0 +1,233 @@
+/* ************************* IMPORT ******************** */
+:root {
+  /* Color palette */
+  --clr-success: #79c09d;
+  --clr-warning: #d36509;
+  --clr-light: #ffffff;
+  --clr-accent: #222222;
+  --clr-info: #636363;
+  --clr-title: #0a2a52;
+  --clr-choice: #d26510;
+  --magic-css: 8px + calc(1.5625vw);
+  --width-tablet: 768px;
+  --width-desktop: 1024px;
+}
+
+/* ************************* MIXINS ******************** */
+/* ************************* FUNCTIONS ******************** */
+button {
+  border: 3px solid var(--clr-success);
+  color: var(--clr-success);
+  background-color: transparent;
+  border-radius: 5px;
+  margin-bottom: var(--magic-css);
+  width: auto;
+  display: block;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  transition: box-shadow 0.3s ease;
+}
+button.whiteout {
+  border: 3px solid var(--clr-light);
+  color: var(--clr-light);
+  background-color: transparent;
+  border-radius: 5px;
+  margin-bottom: var(--magic-css);
+  width: auto;
+  display: block;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  transition: box-shadow 0.3s ease;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px white;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ************************* MAIN ******************** */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  margin-block: 50px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--clr-info);
+  border-radius: 6px;
+  padding-left: 6px;
+}
+
+/* ************************* NAV ******************** */
+.navbar-main-grid {
+  /* Grid */
+  /* display: grid;
+  grid-template-columns: 170px 1fr 60px; */
+  display: flex;
+  align-items: center;
+  padding: var(--magic-css);
+  justify-content: space-evenly;
+  height: 60px;
+  width: 100%;
+  background-color: var(--clr-success);
+  border-bottom: 2px solid var(--clr-info);
+  padding: 0.8em;
+}
+.navbar-main-grid > * {
+  cursor: pointer;
+}
+.navbar-main-grid .flexible-links {
+  padding: 0px;
+  gap: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex: 1;
+}
+.navbar-main-grid .flexible-links :nth-child(1) {
+  display: none;
+}
+.navbar-main-grid .flexible-links :nth-child(2) {
+  display: none;
+}
+.navbar-main-grid .flexible-links :nth-child(3) {
+  display: none;
+}
+.navbar-main-grid .flexible-links :nth-child(4) {
+  display: none;
+}
+.navbar-main-grid .flexible-links :nth-child(5) {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navbar-main-grid .flexible-links :nth-child(1) {
+    display: inline;
+    font-weight: 700;
+  }
+  .navbar-main-grid .flexible-links :nth-child(1):last-child {
+    margin-left: auto;
+  }
+  .navbar-main-grid .flexible-links :nth-child(2) {
+    display: inline;
+    font-weight: 700;
+  }
+  .navbar-main-grid .flexible-links :nth-child(2):last-child {
+    margin-left: auto;
+  }
+  .navbar-main-grid .flexible-links :nth-child(3) {
+    display: inline;
+    font-weight: 700;
+  }
+  .navbar-main-grid .flexible-links :nth-child(3):last-child {
+    margin-left: auto;
+  }
+  .navbar-main-grid .flexible-links :nth-child(4) {
+    display: inline;
+    font-weight: 700;
+  }
+  .navbar-main-grid .flexible-links :nth-child(4):last-child {
+    margin-left: auto;
+  }
+  .navbar-main-grid .flexible-links :nth-child(5) {
+    display: inline;
+    font-weight: 700;
+  }
+  .navbar-main-grid .flexible-links :nth-child(5):last-child {
+    margin-left: auto;
+  }
+}
+
+.nav-logo {
+  background: url(../../images/ui/Logo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  border: 0.1em solid transparent;
+  width: 100%;
+  height: 100%;
+  flex: 0;
+  flex-basis: 40%;
+}
+
+.tasty-menu {
+  display: none;
+}
+
+.nav-burger {
+  background: url(../../images/burger-solid.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  border: 0.1em solid transparent;
+  width: 100%;
+  height: 100%;
+  flex: 0;
+  flex-basis: 160px;
+}
+.nav-burger:hover .tasty-menu {
+  position: relative;
+  display: block;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+  background-color: var(--clr-warning);
+}
+.nav-burger:hover .tasty-menu ul {
+  list-style: none;
+  padding: 0px;
+}
+@media screen and (min-width: 768px) {
+  .nav-burger {
+    display: none;
+  }
+}
+
+/* header {
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+} */
+/* ************************* FOOTER ******************** */
+footer {
+  padding: var(--magic-css);
+  /* Remove p element for mobile diplay */
+  /* Display */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: var(--clr-accent);
+  /* Since in the mockup image the cards are cut off by the footer, I imagine it's due to a sticky property! */
+  /* position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; */
+  /* List styling */
+}
+footer > p {
+  display: none;
+}
+footer ul {
+  list-style: none;
+  padding: 0px;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=global.css.map */

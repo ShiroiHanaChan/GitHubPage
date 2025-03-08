@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+.contacts-simple-flex {
+
+  /* *+* EXPERIMETAL *+* */
+
+  @media screen and (height >= 768px) {
+    max-inline-size: 768px;
+    margin: auto;
+  }
+
+  /* *+* *+* ** *+* *+*  */
+
+  color: var(--clr-info);
+  & form {
+    --form-margin: 10px;
+    
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    &>:nth-child(2n) {
+      margin-bottom: var(--form-margin);
+    }
+    &>:last-child {
+      margin-left: auto;
+    }
+  }
+}
+
+.contacts-bg-banner {
+  @include background-icons(rgba(0,0,0,0.4) url(../../images/contact-banner.jpg), cover, center);
+  background-blend-mode: darken;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 1rem;
+  width: 100%;
+  max-block-size: 200px;
+  object-fit: cover;
+  color: var(--clr-light);
+}

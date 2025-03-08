@@ -4,80 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebDesign</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/css/links.css" />
   </head>
   <body>
-    <header></header>
-    <main>
+    <header>
       <nav class="navbar-main-grid">
         <div class="nav-logo"></div>
         <ul class="flexible-links">
-          <li>New Features</li>
+          <a href="index.html"><li>New Features</li></a>
           <li>Gallery</li>
           <li>Articles</li>
           <li>Contact</li>
         </ul>
-        <div class="nav-burger"></div>
+        <div class="nav-burger">
+          <ul class="tasty-menu">
+            <li>New Features</li>
+            <li>Gallery</li>
+            <li>Articles</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       </nav>
+    </header>
+    
+    <main class="contacts-simple-flex">
+      <figure class="contacts-bg-banner">
+        <h1>Tell us what you think!</h1>
+      </figure>
 
-      <article class="banner-block-border">
-        <h1>Designs with Bootstrap</h1>
-        <p>
-          <!-- prettier-ignore -->
-          Dreamweaver CC 2015 includes support for building responsive websites using Bootstrap. Build content on a fluid grid and use Bootstrap components.
-        </p>
-        <button class="whiteout">New Features</button>
-      </article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus nunc eros, nec blandit purus fringilla eu. Integer ultrices accumsan arcu, quis semper neque luctus at.</p>
 
-      <article class="card-auto-grid">
-        <section>
-          <div class="img-background-div img-1"></div>
-          <div class="text-info">
-            <h1>Responsive</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing ever since the
-              1500s.
-            </p>
-            <button>More</button>
-          </div>
-        </section>
+      <form action="" method="post">
+        <label>Name:</label>
+        <input type="text" name="" id="" placeholder="Enter keywords here">
 
-        <section>
-          <div class="img-background-div img-2"></div>
-          <div class="text-info">
-            <h1>Flexible</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing ever since the
-              1500s.
-            </p>
-            <button>More</button>
-          </div>
-        </section>
+        <label for="">Password:</label>
+        <input type="password" name="" id="" placeholder="Enter keywords here">
 
-        <section>
-          <div class="img-background-div img-3"></div>
-          <div class="text-info">
-            <h1>HTML5 + CSS3</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing ever since the
-              1500s.
-            </p>
-            <button>More</button>
-          </div>
-        </section>
+        <label for="">Message:</label>
+        <input type="text" name="" id="" placeholder="Enter keywords here" cols="3">
 
-        <section>
-          <div class="img-background-div img-4"></div>
-          <div class="text-info">
-            <h1>Launch ready</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing ever since the
-              1500s.
-            </p>
-            <button>More</button>
-          </div>
-        </section>
-      </article>
+        <button>Submit</button>
+      </form>
+    </main>
 
       <footer>
         <p>Learn to build websites using CSS</p>
@@ -89,9 +58,6 @@
           </ul>
         </div>
       </footer>
-      
-    </main>
-      
     <script
       src="https://kit.fontawesome.com/ab7959eada.js"
       crossorigin="anonymous"

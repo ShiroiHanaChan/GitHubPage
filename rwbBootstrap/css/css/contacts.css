@@ -1,0 +1,57 @@
+:root {
+  /* Color palette */
+  --clr-success: #79c09d;
+  --clr-warning: #d36509;
+  --clr-light: #ffffff;
+  --clr-accent: #222222;
+  --clr-info: #636363;
+  --clr-title: #0a2a52;
+  --clr-choice: #d26510;
+  --magic-css: 8px + calc(1.5625vw);
+  --width-tablet: 768px;
+  --width-desktop: 1024px;
+}
+
+/* ************************* MIXINS ******************** */
+.contacts-simple-flex {
+  /* *+* EXPERIMETAL *+* */
+  /* *+* *+* ** *+* *+*  */
+  color: var(--clr-info);
+}
+@media screen and (height >= 768px) {
+  .contacts-simple-flex {
+    max-inline-size: 768px;
+    margin: auto;
+  }
+}
+.contacts-simple-flex form {
+  --form-margin: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contacts-simple-flex form > :nth-child(2n) {
+  margin-bottom: var(--form-margin);
+}
+.contacts-simple-flex form > :last-child {
+  margin-left: auto;
+}
+
+.contacts-bg-banner {
+  background: rgba(0, 0, 0, 0.4) url(../../images/contact-banner.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 0.1em solid transparent;
+  background-blend-mode: darken;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 1rem;
+  width: 100%;
+  max-block-size: 200px;
+  object-fit: cover;
+  color: var(--clr-light);
+}
+
+/*# sourceMappingURL=contacts.css.map */

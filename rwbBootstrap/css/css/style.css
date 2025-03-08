@@ -1,0 +1,121 @@
+/* ************************* IMPORT ******************** */
+:root {
+  /* Color palette */
+  --clr-success: #79c09d;
+  --clr-warning: #d36509;
+  --clr-light: #ffffff;
+  --clr-accent: #222222;
+  --clr-info: #636363;
+  --clr-title: #0a2a52;
+  --clr-choice: #d26510;
+  --magic-css: 8px + calc(1.5625vw);
+  --width-tablet: 768px;
+  --width-desktop: 1024px;
+}
+
+/* ************************* MIXINS ******************** */
+.card-auto-grid {
+  padding: calc(8px + 1.5625vw);
+  margin: calc(8px + 1.5625vw);
+  display: grid;
+  /* Assign areas */
+  /* Grid breakpoints */
+  grid-template-areas: "a" "b" "c" "d";
+  gap: 20px;
+}
+.card-auto-grid > section:nth-child(1) {
+  grid-area: a;
+}
+.card-auto-grid > section:nth-child(2) {
+  grid-area: b;
+}
+.card-auto-grid > section:nth-child(3) {
+  grid-area: c;
+}
+.card-auto-grid > section:nth-child(4) {
+  grid-area: d;
+}
+@media screen and (min-width: 768px) {
+  .card-auto-grid {
+    grid-template-areas: "a b" "c d";
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card-auto-grid {
+    grid-template-areas: "a b c d";
+  }
+}
+.card-auto-grid section {
+  padding: var(--magic-css);
+  /* ***** Assign the backgrounds ***** */
+  /* Remove the titles */
+  /* Grid */
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  height: 300px;
+  color: var(--clr-info);
+}
+.card-auto-grid section .img-1 {
+  background: url(../../images/grid/grid-col-1.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section .img-2 {
+  background: url(../../images/grid/grid-col-2.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section .img-3 {
+  background: url(../../images/grid/grid-col-3.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section .img-4 {
+  background: url(../../images/grid/grid-col-4.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: 0.1em solid transparent;
+}
+.card-auto-grid section h1 {
+  display: none;
+}
+.card-auto-grid section .text-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-auto-grid section .text-info button {
+  margin: auto;
+}
+
+.banner-block-border {
+  padding: calc(8px + 1.5625vw);
+  margin: calc(8px + 1.5625vw);
+  background-color: var(--clr-info);
+  background: rgba(0, 0, 0, 0.4) url(../../images/landing-page-banner.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 0.1em solid transparent;
+  background-blend-mode: darken;
+  border: none;
+  border-radius: 10px;
+}
+@media screen and (width >= 768px) {
+  .banner-block-border > p {
+    width: 45%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,68 @@
+/* ************************* IMPORT ******************** */
+@use 'variables' as *;
+@use 'sass:list';
+
+.card-auto-grid {
+  @include strd-pad-mar();
+  display: grid;
+  /* Assign areas */
+  @for $i from 1 to 5 {
+    & > section:nth-child(#{$i}) {
+      grid-area: list.nth((a, b, c, d), $i);
+    }
+  }
+  /* Grid breakpoints */
+  grid-template-areas:
+  'a'
+  'b'
+  'c'
+  'd';
+  @media screen and (min-width: 768px) {
+    grid-template-areas: 
+    'a b'
+    'c d';
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-areas: 
+    'a b c d';
+  }
+  gap: 20px;
+  & section {
+    padding: var(--magic-css);
+    /* ***** Assign the backgrounds ***** */
+    @for $i from 1 to 5 {
+      .img-#{$i} {
+        @include background-icons(url(../../images/grid/grid-col-#{$i}.png), contain, center);
+      }
+    }
+    /* Remove the titles */
+    & h1 {display: none;}
+    /* Grid */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    height: 300px;
+    color: var(--clr-info);
+    & .text-info {
+      display: flex;
+      flex-direction: column;
+      & button {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.banner-block-border {
+  @include strd-pad-mar();
+  background-color: var(--clr-info);
+  @include background-icons(rgba(0, 0, 0, 0.4) url(../../images/landing-page-banner.jpg), cover, center);
+  background-blend-mode: darken;
+  border: none;
+  border-radius: 10px;
+  
+  @media screen and (width >= 768px) {
+      & > p {
+        width: 45%;
+      } 
+    }
+}

@@ -152,6 +152,12 @@ main {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 85% 92%, 0 90%);
             clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 85% 92%, 0 90%);
   }
+  .main-upload-flex {
+    max-inline-size: var(--width-mobile);
+  }
+  .main-info-area {
+    max-inline-size: 500px;
+  }
   .main-info-area > p:first-of-type {
     text-align: start;
   }
