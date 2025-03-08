@@ -111,6 +111,7 @@
   background-blend-mode: darken;
   border: none;
   border-radius: 10px;
+  color: var(--clr-light);
 }
 @media screen and (width >= 768px) {
   .banner-block-border > p {

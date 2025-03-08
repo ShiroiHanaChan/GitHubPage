@@ -1,2 +1,58 @@
 @use 'variables' as *;
 
+.banner-image-caroussel {
+  width: 100%;
+  position: relative;
+  & img {
+    max-width: 100%;
+    margin: 0px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  & figure {
+    margin: 0px;
+  }
+}
+
+.gallery-main-grid {
+  & h1 {
+    color: var(--clr-choice);
+  }
+  & p {
+    color: var(--clr-info);
+  }
+}
+
+.arrow-flex-set {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  width: 100%;
+  padding-inline: 3%;
+  & > * {
+    cursor: pointer;
+  }
+}
+
+.banner-desktop-footer {
+  display: none;
+}
+
+@media screen and (width >= 768px) {
+  .banner-desktop-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0px;
+    gap: .250rem;
+    & img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+  .gallery-secundary-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+}

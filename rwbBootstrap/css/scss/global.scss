@@ -26,6 +26,10 @@ header a {
   color: white;
 }
 
+h1 {
+  font-weight: 400;
+}
+
 /* ************************* MAIN ******************** */
 
 body {
@@ -38,6 +42,8 @@ main {
   width: 90%;
   margin: auto;
   margin-block: 50px;
+  font-weight: 300;
+  max-inline-size: 1024px;
 }
 
 input {
@@ -151,10 +157,10 @@ footer {
   justify-content: center;
   background-color: var(--clr-accent);
   /* Since in the mockup image the cards are cut off by the footer, I imagine it's due to a sticky property! */
-  /* position: fixed;
+  position: fixed;
   bottom: 0px;
   left: 0px;
-  right: 0px; */
+  right: 0px;
   /* List styling */
   & ul {
     list-style: none;
