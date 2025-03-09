@@ -30,6 +30,14 @@ h1 {
   font-weight: 400;
 }
 
+/* This is to indicate which page is being viewed in the nav bar! */
+li[class*='active-link'] {
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  color: var(--clr-light);
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
 /* ************************* MAIN ******************** */
 
 body {
@@ -41,7 +49,6 @@ body {
 main {
   width: 90%;
   margin: auto;
-  margin-block: 50px;
   font-weight: 300;
   max-inline-size: 1024px;
 }
@@ -56,10 +63,9 @@ input {
 /* ************************* NAV ******************** */
 
 .navbar-main-grid {
-  /* Grid */
-  /* display: grid;
-  grid-template-columns: 170px 1fr 60px; */
-  display: flex;
+  /* Flex */
+  display: grid;
+  grid-template-columns: 180px 1fr 60px;
   align-items: center;
   padding: var(--magic-css);
   justify-content: space-evenly;
@@ -67,21 +73,26 @@ input {
   height: 60px;
   width: 100%;
   background-color: var(--clr-success);
-  border-bottom: 2px solid var(--clr-info);
-  padding: 0.8em;
+
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
 
   & > * {
     cursor: pointer;
   }
 
   & .flexible-links {
+    margin: 0px;
+    margin-inline: 20px;
     padding: 0px;
     gap: 40px;
     list-style: none;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex: 1;
+    /* Remade with grid as to allow easier background color animations */
+    display: grid;
+    grid-template-columns: repeat(3, auto) 1fr;
+    transition: opacity 0.3s ease;
+    height: 100%;
+    /* *** *** *** *** */
     @for $i from 1 to 6 {
       :nth-child(#{$i}) {
         display: none;
@@ -90,10 +101,19 @@ input {
     @media screen and (min-width: 768px) {
       @for $i from 1 to 6 {
         :nth-child(#{$i}) {
-          display: inline;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          white-space: nowrap;
+          padding: 4px;
           font-weight: 700;
           &:last-child {
-            margin-left: auto
+            justify-self: end;
+          }
+          & > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       }
@@ -107,6 +127,9 @@ input {
   height: 100%;
   flex: 0;
   flex-basis: 40%;
+  border: 0.8rem solid transparent;
+  object-fit: cover;
+  min-inline-size: 180px;
 }
 
 .tasty-menu {
@@ -119,6 +142,8 @@ input {
   height: 100%;
   flex: 0;
   flex-basis: 160px;
+  border: 0.8rem solid transparent;
+  min-inline-size: 60px;
   &:hover {
     & .tasty-menu {
       position: relative;
@@ -161,6 +186,7 @@ footer {
   bottom: 0px;
   left: 0px;
   right: 0px;
+  margin-top: 30px;
   /* List styling */
   & ul {
     list-style: none;

@@ -27,6 +27,10 @@
   margin: 0px;
 }
 
+.gallery-main-grid {
+  margin-block-start: 30px;
+  margin-block-end: 90px;
+}
 .gallery-main-grid h1 {
   color: var(--clr-choice);
 }

@@ -15,6 +15,8 @@
 }
 
 .gallery-main-grid {
+  margin-block-start: 30px;
+  margin-block-end: 90px;
   & h1 {
     color: var(--clr-choice);
   }

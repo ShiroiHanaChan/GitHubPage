@@ -26,6 +26,7 @@
 }
 .contacts-simple-flex form {
   --form-margin: 10px;
+  margin-block-end: 90px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -52,6 +53,7 @@
   max-block-size: 200px;
   object-fit: cover;
   color: var(--clr-light);
+  margin-block-start: 30px;
 }
 
 /*# sourceMappingURL=contacts.css.map */
