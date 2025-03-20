@@ -1,0 +1,488 @@
+@import url(../../../../normalize-shiroi.css);
+:root {
+  /* Colors */
+  --neutral-900: hsl(195deg 79% 11%);
+  --neutral-700: hsl(195deg 23% 28%);
+  --neutral-200: hsl(18deg 13% 89%);
+  --neutral-100: hsl(18deg 42% 97%);
+  --neutral-000: hsl(30deg 100% 100%);
+  --lsalmon-500: hsl(22deg 99% 72%);
+  --lsalmon-100: hsl(22deg 99% 91%);
+  --lsalmon-50: hsl(21deg 97% 97%);
+  --text-gradient: linear-gradient(107deg, #FF9A60 -11,37%, #062630 61,84%);
+  --gradient-100: linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%);
+  /* Widths */
+  --width-iphone: 393px;
+  --width-ipad: 768px;
+  --width-mac: 1024px;
+  /* Font sizes */
+  --preset-biggest: 3.875em;
+  --mobile-biggest: 2.375em;
+  --preset-bigger: 3.125em;
+  --mobile-bigger: 2.125em;
+  --preset-big: 2.125em;
+  --mobile-big: 1.5em;
+  --preset-medium: 1.5em;
+  --mobile-medium: 1.5em;
+  --preset-small: 1.25em;
+  --mobile-small: 1.25em;
+  --preset-smaller: 1.125em;
+  --mobile-smaller: 1em;
+  --preset-smallest: 0.875em;
+  /* Spacing */
+  --spacing-0: 0em;
+  --spacing-025: 0.125em;
+  --spacing-050: 0.25em;
+  --spacing-075: 0.375em;
+  --spacing-100: 0.5em;
+  --spacing-150: 0.75em;
+  --spacing-200: 1em;
+  --spacing-250: 1.25em;
+  --spacing-300: 1.5em;
+  --spacing-400: 2em;
+  --spacing-500: 2.5em;
+  --spacing-600: 3em;
+  --spacing-800: 4em;
+  --spacing-1000: 5em;
+  /* Radius */
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+
+/*  */
+.wrapper {
+  width: 90%;
+  margin: auto;
+  margin-block: var(--spacing-400);
+}
+.wrapper:last-child {
+  margin-block: 0;
+}
+
+.wrapper-footer {
+  max-inline-size: fit-content;
+  margin: auto;
+}
+
+/* This will change the order of the grid elements to be inverted. doesnt look like it needs a text-align and the default looks good */
+.inverted-grid-panel figure {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+/* targets all h1 elements outside the main 3 articles */
+@media screen and (width >= 1024px) {
+  article:not([class~=stacked-grid]) h1 {
+    text-align: center;
+    margin: auto;
+    max-inline-size: 535px;
+  }
+}
+
+/*  */
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+  max-inline-size: 470px;
+}
+
+p, li {
+  color: var(--neutral-700);
+}
+
+html {
+  font-family: monospace;
+  font-size: var(--mobile-small);
+}
+@media screen and (width >= 768px) {
+  html {
+    font-size: var(--mobile-medium);
+  }
+}
+@media screen and (width >= 1024px) {
+  html {
+    font-size: var(--preset-medium);
+  }
+}
+
+main {
+  max-width: 100%;
+}
+main > * {
+  padding: 0;
+}
+main > * > * {
+  padding-block: var(--spacing-100);
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  padding: 0px;
+  margin: 0px;
+  max-inline-size: fit-content;
+}
+
+header {
+  padding: var(--spacing-100);
+}
+
+hr {
+  width: 80%;
+  margin: auto;
+  border: none;
+  height: 1px;
+  background-color: var(--neutral-200);
+  padding: 0;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-inline: auto;
+  margin-block: var(--spacing-400);
+  padding: var(--spacing-150);
+  background-color: var(--lsalmon-50);
+  max-inline-size: 340px;
+  /* Text */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  /* Border */
+  border-radius: var(--radius-12);
+  border: black 2px solid;
+}
+button img {
+  transform: scale(0.8);
+}
+button:hover {
+  cursor: pointer;
+}
+@media screen and (width >= 768px) {
+  button {
+    margin-inline: 0;
+  }
+}
+
+footer button {
+  color: var(--neutral-000);
+  border-color: var(--neutral-000);
+  background-color: var(--neutral-900);
+  margin-inline: auto;
+}
+
+article img {
+  border-radius: var(--radius-12);
+}
+
+/* Controls for media queries */
+/* Tablet model media queries */
+@media screen and (width >= 550px) {
+  .flexible-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* * * *** *** *** *** *** * * */
+/* Desktop model media queries */
+@media screen and (width >= 1024px) {
+  .flexible-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    max-inline-size: 1400px;
+  }
+}
+
+/* TARGET THE FIRST 3 ARTICLES, THESE HAVE A SIMPLE GRID LAYOUT OF 2 1FRs */
+@media screen and (width >= 1024px) {
+  .stacked-grid.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 20px;
+    /* lower button margin */
+  }
+  .stacked-grid.wrapper button {
+    margin-block: var(--spacing-200);
+  }
+}
+
+/* *** *** *** *** *** *** *** */
+@media screen and (width >= 1024px) {
+  .membership-options-bigger-card {
+    transform: scale(1.05);
+    transform-origin: center;
+    z-index: 10;
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .dynamic-text {
+    text-align: center;
+  }
+  .dynamic-text figure {
+    margin: auto;
+  }
+}
+
+.developer-reviews {
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(100%));
+  gap: 5px;
+}
+.developer-reviews > figure:first-child {
+  display: flex;
+  align-items: center;
+}
+.developer-reviews .split-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.developer-reviews .split-column p {
+  margin: 0px;
+  font-size: var(--preset-smallest);
+}
+
+.grid-paper-gb {
+  border-radius: var(--radius-16);
+  background-color: var(--neutral-100);
+  background-image: url(../../assets/images/pattern-light-bg.svg);
+  /* CODE TO STYLE MAIN H1 */
+}
+.grid-paper-gb:not([class~=wrapper]) > * > * > *:nth-child(-n+2) {
+  margin-block: var(--spacing-100);
+}
+.grid-paper-gb article[class~=stacked-grid] h1 {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(255, 224, 192) 0%, rgb(151, 183, 186) 51%, rgb(225, 51, 166) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  max-inline-size: 400px;
+  font-size: 2.6em;
+  line-height: 0.9;
+}
+@media screen and (width >= 768px) {
+  .grid-paper-gb article[class~=stacked-grid] h1 {
+    font-size: 4.5em;
+    max-inline-size: 750px;
+    background-color: green;
+    font-weight: 700;
+  }
+}
+@media screen and (width >= 1024px) {
+  .grid-paper-gb article[class~=stacked-grid] h1 {
+    font-size: 3.5em;
+    max-inline-size: 750px;
+    background-color: green;
+    font-weight: 700;
+    margin-block: var(--spacing-050);
+  }
+}
+
+/* Minor styling to add padding to Your tech reading journey card */
+article[class~=wrapper][class~=grid-paper-gb] > * {
+  padding-inline: 20px;
+  padding-block: var(--spacing-100);
+}
+@media screen and (1024px >= width >= 768px) {
+  article[class~=wrapper][class~=grid-paper-gb] > * {
+    max-inline-size: 700px;
+  }
+}
+
+/* MEMBERSHIP OPTIONS CARDS */
+.flexible-points {
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-16);
+  padding: var(--spacing-200);
+  background-color: white;
+  /* Controls the title and price paddings */
+}
+.flexible-points[class~=highlighted] {
+  background: var(--gradient-100);
+}
+.flexible-points span {
+  font-size: var(--mobile-biggest);
+  color: black;
+  font-weight: 700;
+}
+.flexible-points button {
+  margin: auto;
+}
+.flexible-points > *:nth-child(-n+4) {
+  padding-inline: var(--spacing-100);
+}
+.flexible-points > *:last-child {
+  margin-bottom: var(--spacing-200);
+}
+
+/* Almost all footer variables, with one being present within global */
+footer {
+  background-color: var(--neutral-900);
+  background-image: url(../../assets/images/pattern-dark-bg.svg);
+  border-top-left-radius: var(--radius-16);
+  border-top-right-radius: var(--radius-16);
+  color: var(--neutral-000);
+  /* Controls margin on block level for the button and bottom logos/copyright */
+  /* Controls footer figure with .dev-reviews */
+}
+footer p {
+  color: var(--neutral-000);
+  margin: 0;
+}
+footer article > h1 {
+  margin-inline: auto;
+  margin-block: var(--spacing-100);
+  text-align: center;
+}
+footer > * > *:nth-child(2n+2) {
+  margin-block: var(--spacing-250);
+}
+footer .developer-reviews {
+  margin: auto;
+}
+
+/* Controls the footer logo links thru various states */
+.footer-logos {
+  text-align: center;
+}
+.footer-logos > figure img {
+  border-radius: 0;
+}
+@media screen and (width <= 768px) {
+  .footer-logos figure {
+    margin: auto;
+  }
+}
+.footer-logos > * {
+  margin-block: var(--spacing-150);
+}
+@media screen and (width >= 768px) {
+  .footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ALL CODE RELATED TO LISTS */
+article {
+  /* this is to control the checkmarks */
+}
+article ul {
+  padding: 0;
+  list-style: none;
+  /* Media query for the grid change with a 1024px vw */
+}
+article ul li {
+  margin-block: var(--spacing-050);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 700;
+}
+article[class~=stacked-grid] ul li::before {
+  content: url(../../assets/images/icon-check.svg);
+  margin-right: var(--spacing-100);
+  transform: scale(0.9);
+}
+@media screen and (width >= 1024px) {
+  article[class~=stacked-grid] ul li::before {
+    transform: scale(0.9);
+  }
+}
+article:not([class~=stacked-grid]) li {
+  display: block;
+}
+article:not([class~=stacked-grid]) li p:has(span) span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--spacing-300);
+  height: var(--spacing-300);
+  border: 2px solid black;
+  border-radius: var(--radius-4);
+}
+article section[class~=flexible-points] > ul li {
+  margin-block: var(--spacing-050);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* this is to control the checkmarks in membership options */
+}
+article section[class~=flexible-points] > ul li::before {
+  content: url(../../assets/images/icon-check.svg);
+  margin-right: var(--spacing-100);
+  transform: scale(0.9);
+}
+
+@media screen and (width >= 1024px) {
+  .list-grid-desktop {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-inline: 8%;
+  }
+  .list-grid-desktop li {
+    display: inline-block;
+    /* select the 3 cards to get the arrows */
+  }
+  .list-grid-desktop li:nth-child(-n+3) > :first-child {
+    /* ultra sneaky way to add the arrows eheh */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list-grid-desktop li:nth-child(-n+3) > :first-child::after {
+    content: url(../../assets/images/pattern-arrow.svg);
+  }
+}
+
+/* ************* */
+/* For the circle around the word club */
+article[class~=stacked-grid] h1 span {
+  background-image: url(../../assets/images/pattern-circle.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: var(--spacing-100);
+}
+
+/* ********** */
+/* Controls the logos present within the figure inside Not your average book club */
+figure .figure-logos {
+  position: absolute;
+  right: 5%;
+  bottom: 40px;
+}
+
+.logos {
+  position: relative;
+  display: none;
+}
+@media screen and (width >= 768px) {
+  .logos {
+    display: block;
+  }
+}
+
+/* ********** */
+
+/*# sourceMappingURL=style.css.map */

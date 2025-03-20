@@ -1,0 +1,67 @@
+/* Controls for media queries */
+
+/* Tablet model media queries */
+
+// Membership Options tablet
+.flexible-wrapper {
+  @media screen and (width >= 550px) {
+    // Display of grid properties
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+
+/* * * *** *** *** *** *** * * */
+
+/* Desktop model media queries */
+
+// MEMBERSHIP OPTIONS
+.flexible-wrapper {
+  @media screen and (width >= 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    // set a maximum value so the cards dont get too big
+    max-inline-size: 1400px;
+  }
+}
+
+/* TARGET THE FIRST 3 ARTICLES, THESE HAVE A SIMPLE GRID LAYOUT OF 2 1FRs */
+
+.stacked-grid.wrapper {
+  @media screen and (width >= 1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    // consistent 20px gap
+    gap: 20px;
+    /* lower button margin */
+    & button {
+      margin-block: var(--spacing-200);
+    }
+  }
+}
+
+/* *** *** *** *** *** *** *** */
+
+// Extra costum properties for small tweeks with media queries
+
+.membership-options-bigger-card {
+  @media screen and (width >= 1024px) {
+    transform: scale(1.05);
+    transform-origin: center;
+    z-index: 10;
+  }
+}
+
+// sets the qoute above the footer to be text align centered at desktop width
+.dynamic-text {
+  @media screen and (width >= 1024px) {
+    text-align: center;
+    // to center the 5 stars above the text
+    & figure {
+      margin: auto;
+    }
+  }
+}

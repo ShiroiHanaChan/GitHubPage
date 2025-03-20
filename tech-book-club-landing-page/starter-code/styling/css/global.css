@@ -1,0 +1,134 @@
+/*  */
+.wrapper {
+  width: 90%;
+  margin: auto;
+  margin-block: var(--spacing-400);
+}
+.wrapper:last-child {
+  margin-block: 0;
+}
+
+.wrapper-footer {
+  max-inline-size: fit-content;
+  margin: auto;
+}
+
+/* This will change the order of the grid elements to be inverted. doesnt look like it needs a text-align and the default looks good */
+.inverted-grid-panel figure {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+/* targets all h1 elements outside the main 3 articles */
+@media screen and (width >= 1024px) {
+  article:not([class~=stacked-grid]) h1 {
+    text-align: center;
+    margin: auto;
+    max-inline-size: 535px;
+  }
+}
+
+/*  */
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+  max-inline-size: 470px;
+}
+
+p, li {
+  color: var(--neutral-700);
+}
+
+html {
+  font-family: monospace;
+  font-size: var(--mobile-small);
+}
+@media screen and (width >= 768px) {
+  html {
+    font-size: var(--mobile-medium);
+  }
+}
+@media screen and (width >= 1024px) {
+  html {
+    font-size: var(--preset-medium);
+  }
+}
+
+main {
+  max-width: 100%;
+}
+main > * {
+  padding: 0;
+}
+main > * > * {
+  padding-block: var(--spacing-100);
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  padding: 0px;
+  margin: 0px;
+  max-inline-size: fit-content;
+}
+
+header {
+  padding: var(--spacing-100);
+}
+
+hr {
+  width: 80%;
+  margin: auto;
+  border: none;
+  height: 1px;
+  background-color: var(--neutral-200);
+  padding: 0;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-inline: auto;
+  margin-block: var(--spacing-400);
+  padding: var(--spacing-150);
+  background-color: var(--lsalmon-50);
+  max-inline-size: 340px;
+  /* Text */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  /* Border */
+  border-radius: var(--radius-12);
+  border: black 2px solid;
+}
+button img {
+  transform: scale(0.8);
+}
+button:hover {
+  cursor: pointer;
+}
+@media screen and (width >= 768px) {
+  button {
+    margin-inline: 0;
+  }
+}
+
+footer button {
+  color: var(--neutral-000);
+  border-color: var(--neutral-000);
+  background-color: var(--neutral-900);
+  margin-inline: auto;
+}
+
+article img {
+  border-radius: var(--radius-12);
+}
+
+/*# sourceMappingURL=global.css.map */

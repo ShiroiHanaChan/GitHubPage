@@ -1,0 +1,52 @@
+/* Controls for media queries */
+/* Tablet model media queries */
+@media screen and (width >= 550px) {
+  .flexible-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* * * *** *** *** *** *** * * */
+/* Desktop model media queries */
+@media screen and (width >= 1024px) {
+  .flexible-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    max-inline-size: 1400px;
+  }
+}
+
+/* TARGET THE FIRST 3 ARTICLES, THESE HAVE A SIMPLE GRID LAYOUT OF 2 1FRs */
+@media screen and (width >= 1024px) {
+  .stacked-grid.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 20px;
+    /* lower button margin */
+  }
+  .stacked-grid.wrapper button {
+    margin-block: var(--spacing-200);
+  }
+}
+
+/* *** *** *** *** *** *** *** */
+@media screen and (width >= 1024px) {
+  .membership-options-bigger-card {
+    transform: scale(1.05);
+    transform-origin: center;
+    z-index: 10;
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .dynamic-text {
+    text-align: center;
+  }
+  .dynamic-text figure {
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=mediaQueries.css.map */

@@ -1,0 +1,247 @@
+@use 'variables' as *;
+@use 'sass:list';
+@use 'global';
+@use 'mediaQueries';
+@import url(../../../../normalize-shiroi.css);
+
+.developer-reviews {
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(100%));
+  gap: 5px;
+  & > figure:first-child {
+    display: flex;
+    align-items: center;
+  }
+  & .split-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & p {
+      margin: 0px;
+      font-size: var(--preset-smallest);
+    }
+  }
+}
+
+.grid-paper-gb {
+  border-radius: var(--radius-16);
+  background-color: var(--neutral-100);
+  background-image: url(../../assets/images/pattern-light-bg.svg);
+
+  &:not([class~=wrapper]) > * > * > *:nth-child(-n + 2) {
+    margin-block: var(--spacing-100);
+  }
+
+  /* CODE TO STYLE MAIN H1 */
+  & article[class~=stacked-grid] h1 {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,224,192,1) 0%, rgba(151,183,186,1) 51%, rgba(225,51,166,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    max-inline-size: 400px;
+    font-size: 2.6em;
+    line-height: .9;
+    @media screen and (width >= 768px) {
+      font-size: 4.5em;
+      max-inline-size: 750px;
+      background-color: green;
+      font-weight: 700;
+    }
+    @media screen and (width >= 1024px) {
+      font-size: 3.5em;
+      max-inline-size: 750px;
+      background-color: green;
+      font-weight: 700;
+      margin-block: var(--spacing-050);
+    }
+  }
+}
+
+/* Minor styling to add padding to Your tech reading journey card */
+article[class~=wrapper][class~=grid-paper-gb] > *{
+  padding-inline: 20px; // using em makes it weird!
+  padding-block: var(--spacing-100);
+  @media screen and (1024px >= width >= 768px) {
+    max-inline-size: 700px;
+  }
+}
+
+
+/* MEMBERSHIP OPTIONS CARDS */
+
+.flexible-points {
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-16);
+  padding: var(--spacing-200);
+  background-color: white;
+
+  &[class~=highlighted] {
+    background: var(--gradient-100);
+  }
+  & span {
+    font-size: var(--mobile-biggest);
+    color: black;
+    font-weight: 700;
+  }
+  & button {
+    margin: auto;
+  }
+
+  // 1024px Grid layout tweeks
+  
+  /* Controls the title and price paddings */
+  & > *:nth-child(-n + 4) {
+    padding-inline: var(--spacing-100);
+  }
+  & > *:last-child {
+    margin-bottom: var(--spacing-200);
+  }
+}
+
+/* Almost all footer variables, with one being present within global */
+footer {
+  background-color: var(--neutral-900);
+  background-image: url(../../assets/images/pattern-dark-bg.svg);
+  border-top-left-radius: var(--radius-16);
+  border-top-right-radius: var(--radius-16);
+  color: var(--neutral-000);
+  & p {
+    color: var(--neutral-000);
+    margin: 0;
+  }
+  & article > h1 {
+    margin-inline: auto;
+    margin-block: var(--spacing-100);
+    text-align: center;
+  }
+  /* Controls margin on block level for the button and bottom logos/copyright */
+  & > * > *:nth-child(2n + 2) {
+    margin-block: var(--spacing-250);
+  }
+  /* Controls footer figure with .dev-reviews */
+  & .developer-reviews {
+    margin: auto;
+  }
+}
+
+/* Controls the footer logo links thru various states */
+.footer-logos {
+  text-align: center;
+  & > figure img {
+    border-radius: 0;
+  }
+  @media screen and (width <= 768px) {
+    & figure {
+    margin: auto;
+    }
+  }
+  & > * {
+    margin-block: var(--spacing-150);
+  }
+  @media screen and (width >= 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ALL CODE RELATED TO LISTS */
+article {
+  & ul {
+    padding: 0;
+    list-style: none;
+    & li {
+      margin-block: var(--spacing-050);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-weight: 700;
+    }
+    /* Media query for the grid change with a 1024px vw */
+  }
+  /* this is to control the checkmarks */
+  &[class~=stacked-grid] ul {
+    & li {
+      &::before {
+        content: url(../../assets/images/icon-check.svg);
+        margin-right: var(--spacing-100);
+        transform: scale(.9);
+        @media screen and (width >= 1024px) {
+          transform: scale(.9);
+        }
+      }
+    }
+  }
+  &:not([class~=stacked-grid]) li {
+    display: block;
+    & p:has(span) span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--spacing-300);
+      height: var(--spacing-300);
+      border: 2px solid black;
+      border-radius: var(--radius-4);
+    }
+  }
+  & section[class~=flexible-points] > ul li {
+    margin-block: var(--spacing-050);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* this is to control the checkmarks in membership options */
+    &::before {
+      content: url(../../assets/images/icon-check.svg);
+      margin-right: var(--spacing-100);
+      transform: scale(.9);
+    }
+  }
+}
+.list-grid-desktop {
+  @media screen and (width >= 1024px) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-inline: 8%;
+      & li {
+        display: inline-block;
+        /* select the 3 cards to get the arrows */
+        &:nth-child(-n + 3) > :first-child {
+          /* ultra sneaky way to add the arrows eheh */
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &::after {
+            content: url(../../assets/images/pattern-arrow.svg);
+          }
+        }
+      }
+    }
+  }
+/* ************* */
+
+/* For the circle around the word club */
+article[class~=stacked-grid] h1 span {
+  background-image: url(../../assets/images/pattern-circle.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: var(--spacing-100);
+}
+/* ********** */
+
+/* Controls the logos present within the figure inside Not your average book club */
+figure .figure-logos {
+  position: absolute;
+  right: 5%;
+  bottom: 40px;
+}
+
+.logos {
+  position: relative;
+  display: none;
+  @media screen and (width >= 768px) {
+    display: block;
+  }
+}
+/* ********** */
