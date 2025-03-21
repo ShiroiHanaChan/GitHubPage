@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECMAScript</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: monospace;
+      background-color: lightpink;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 1em;
+    }
+
+    main {
+      margin-inline: 20%;
+      padding: 1em;
+      border: 2px solid black;
+      border-radius: 12px;
+      background-color: aqua;
+    }
+
+    button {
+      padding: .25em;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: pink;
+    }
+
+    button:active {
+      background-color: rgb(255, 148, 166);
+    }
+
+    span {
+      font-size: .7em;
+    }
+  </style>
+</head>
+<body>
+    <h1>JS - Number Guess</h1>
+    <hr>
+    <main>
+
+      <h1>Pick a number between 1 and 20!</h1>
+
+      <form action="" class="data-input">
+        <label for="number">Number</label>
+        <input type="text" name="number" id="number"><span> * Enter a number</span>
+        <br><br>
+        
+        <button>Send</button>
+        <br><br>
+      </form>
+
+        <section id="info-textbox"></section>
+
+      <section id="output"></section>
+    </main>
+
+    <script>
+
+      // Add a selector pointing to the id of the data being input
+      const form = document.querySelector('.data-input');
+      let output = document.getElementById('output');
+
+      let guessesRemaining = 10;
+      let guessed = [''];
+      let number;
+      let gameOver = '';
+      let hint = '';
+
+      // returns a randomly chosen secret number to be guessed by the user
+      secretNumber = Math.round((Math.random() * 20)+1);
+      console.log(secretNumber)
+      //listen to the querySelector declared in the form 'const'
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        //fetch the numerical value being input in the form input
+        let number = Number(document.getElementById('number').value);
+        console.log(number)
+        console.log(typeof number)
+        // Catch error if any data isn't a number or too big/low
+        if (isNaN(number) ||  number < 1 || number > 20) {
+          output.innerHTML = 'Please input only numbers between 1 and 20!';
+          return;
+        }
+
+        // checks if the number input is correct
+        if (number === secretNumber) {
+            gameOver = `Win!!`;
+            // check if the incorrect number has been guessed before and is contained within the guessed array
+        } else if (guessed.includes(number.toString())) {
+            console.log(`Already guessed ${number}`);
+            hint = `Already guessed ${number}`
+        } else { // if it is not add it to the array and decrease chances
+            guessed.push(number.toString());
+            guessesRemaining--;
+            // compares the two values and gives a hint if it's too low or high
+            if (number < secretNumber) {
+                hint = 'Too low!'
+            } else {
+                hint = 'Too high!'
+            }
+        } // checks if the player has run out of guesses
+          if (guessesRemaining < 1) {
+              gameOver = 'You have lost :c';
+          }
+
+        // Display the results
+        output.innerHTML = `
+        <h1> Results </h1>
+        <p> Guesses remaining: ${guessesRemaining} </p>
+        <p> Incorrect guesses taken: ${guessed} </p>
+        <p> Hint: ${hint} </p>
+        <p> Result: ${gameOver} </p>
+        `;
+      });
+
+      // escrever dentro da section com id output
+
+
+    </script>
+</body>
+</html>
