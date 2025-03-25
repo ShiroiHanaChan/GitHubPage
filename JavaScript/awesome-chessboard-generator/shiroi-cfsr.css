@@ -1,0 +1,57 @@
+:root {
+  /* Colors */
+  --neutral-900: hsl(195deg 79% 11%);
+  --neutral-700: hsl(195deg 23% 28%);
+  --neutral-200: hsl(18deg 13% 89%);
+  --neutral-100: hsl(18deg 42% 97%);
+  --neutral-000: hsl(30deg 100% 100%);
+
+  /* Font sizes */
+  --preset-biggest: 3,875em;
+  --mobile-biggest: 2,375em;
+
+  --preset-bigger: 3,125em;
+  --mobile-bigger: 2,125em;
+  
+  --preset-big: 2,125em;
+  --mobile-big: 1,5em;
+
+  --preset-medium: 1.5em;
+  --mobile-medium: 1.5em;
+
+  --preset-small: 1,25em;
+  --mobile-small: 1,25em;
+  
+  --preset-smaller: 1,125em;
+  --mobile-smaller: 1em;
+
+  --preset-smallest: 0,875em;
+
+  /* Spacing */
+  --spacing-0: 0em;
+  --spacing-025: 0,125em;
+  --spacing-050: 0,25em;
+  --spacing-075: 0,375em;
+  --spacing-100: 0,5em;
+  --spacing-150: 0,75em;
+  --spacing-200: 1em;
+  --spacing-250: 1,25em;
+  --spacing-300: 1,5em;
+  --spacing-400: 2em;
+  --spacing-500: 2,5em;
+  --spacing-600: 3em;
+  --spacing-800: 4em;
+  --spacing-1000: 5em;
+
+  /* Radius */
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}

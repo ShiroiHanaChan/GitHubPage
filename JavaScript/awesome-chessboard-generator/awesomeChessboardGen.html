@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Chessboard Generator!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrapper-70">
+    <section>
+      <h1>Chessboard Generator - JS</h1>
+    </section>
+
+    <article>
+      <section class="bg-white padding-main-elements">
+        <form action="" class="chessboard-generator">
+          <label for="chess-generator">Generate a board of X width and Y height</label>
+          <input type="text" name="chess-generator" id="chess-generatorX">
+          <input type="text" name="chess-generator" id="chess-generatorY">
+          <button>Send!</button>
+        </form>
+
+        <form action="odd-even" class="odd-or-even">
+          <label for="">Is tile X and Y odd or even?</label>
+          <input type="text" name="odd-even" id="odd-evenX">
+          <input type="text" name="odd-even" id="odd-evenY">
+          <button>Send!</button>
+        </form>
+      </section>
+
+      <div class="anchor-unit">
+        <section class="costum-results-display bg-white padding-main-elements">
+          <h2>Results</h2>
+          <p id="resultsOutput"></p>
+        </section>
+      </div>
+
+      <div class="wrapper-90 flexi-grid">
+        <section class="grid" id="chessboard">
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <h2><a href="https://github.com/ShiroiHanaChan" target="_blank">Shiroi Hana!</a></h2>
+  </footer>
+    <script src="project.js"></script>
+</body>
+</html>
