@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+}
+
+article {
+  margin: auto;
+  max-inline-size: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 1rem;
+  container-type: inline-size;
+  /*@container ( calc(125px * 8 + 7rem) <= width < calc(125px * 10 + 9rem) ) {
+    section:last-child {
+      background-color: blue;
+      grid-column: 4 / 6;
+    }
+  }*/
+}
+article section {
+  border: 1px solid black;
+  grid-column: span 2;
+}
+@container ( calc(125px * 4 + 3rem) <= width < calc(125px * 6 + 5rem) ) {
+  article section:last-child:nth-child(odd) {
+    /*background-color: red;*/
+    grid-column: 2/4;
+  }
+}
+@container ( calc(125px * 6 + 5rem) <= width < calc(125px * 10 + 9rem) ) {
+  article section:nth-last-child(2) {
+    /*background-color: green;*/
+    grid-column: 2/4;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

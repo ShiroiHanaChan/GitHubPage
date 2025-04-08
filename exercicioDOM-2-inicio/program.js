@@ -1,3 +1,8 @@
+let link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'style.css';
+document.head.appendChild(link);
+
 const livros = [
     {
         title: 'Angular Com Typescript',
@@ -127,7 +132,6 @@ function stylePage() {
 
 makeCards(livros, cardOrder);
 populateCards(livros, cardOrder, cardElements);
-stylePage();
 
 
 
