@@ -52,14 +52,17 @@ function createNewBook(event, bookID = Math.random()*1000) {
 }
 
 function editBook(hijackedID) {
+    /*livros[livros.findIndex(obj => obj.id === Number(hijackedID))]*/
+    // Hoist variable
+    var bookIDindex = livros.findIndex(obj => obj.id === Number(hijackedID));
     if (bookForm.classList.contains('visibilityNone'))
         bookForm.classList.replace('visibilityNone', 'displayVisible');
-    myH1.innerHTML = `Editing ${livros[hijackedID].title}`;
-    bookTitle.value = `${livros[hijackedID].title}`;
-    bookAuthor.value = `${livros[hijackedID].author}`;
-    bookThumbnail.value = `${livros[hijackedID].imageUrl}`;
-    bookPopup.value = `${livros[hijackedID].imageUrlGr}`;
-    bookCheckbox.checked = livros[hijackedID].alreadyRead;
+    myH1.innerHTML = `Editing ${livros[bookIDindex].title}`;
+    bookTitle.value = `${livros[bookIDindex].title}`;
+    bookAuthor.value = `${livros[bookIDindex].author}`;
+    bookThumbnail.value = `${livros[bookIDindex].imageUrl}`;
+    bookPopup.value = `${livros[bookIDindex].imageUrlGr}`;
+    bookCheckbox.checked = livros[bookIDindex].alreadyRead;
     return bookId = hijackedID;
 }
 
@@ -69,18 +72,18 @@ function honSakujo(id) {
 }
 
 function showPopUp(click, livros) {
-        // Enter pop-up
-        let popUp = document.createElement('div');
-        grid.parentElement.append(popUp)
-        popUp.classList.add('pop-up')
-        popUp.innerHTML = `
-            <img src="livros/${livros[click.parentElement.dataset.bookid].imageUrlGr}" alt="${click.title}">
-            `
-        // Leave pop-up
-        const popUpDelete = document.querySelector('.pop-up');
-        popUpDelete.addEventListener('click', (eventObj) => {
-            popUpDelete.remove()
-        }, false)
+    // Enter pop-up
+    let popUp = document.createElement('div');
+    grid.parentElement.append(popUp)
+    popUp.classList.add('pop-up')
+    popUp.innerHTML = `
+        <img src="livros/${livros[livros.findIndex(obj => obj.id === Number(click.parentNode.dataset.bookid))].imageUrlGr}" alt="${click.title}">
+        `
+    // Leave pop-up
+    const popUpDelete = document.querySelector('.pop-up');
+    popUpDelete.addEventListener('click', (eventObj) => {
+        popUpDelete.remove()
+    }, false)
 }
 
 /* Método ler todos os livros */

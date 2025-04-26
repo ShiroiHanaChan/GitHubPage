@@ -55,7 +55,7 @@ function showBooks(arrayBooks){
             <article data-bookid="${book.id}">
                 <h1>${book.title}</h1>
                 <h2>${book.author}</h2>
-                <img src="livros/${book.imageUrl}" alt="${book.title}}">
+                <img src="livros/${book.imageUrl}" alt="${book.title}">
                 <p>Already read: ${book.alreadyRead ? '✅' : '❌' }</p>
                 <button id="bookDeleteButton" data-bookid="${book.id}">Delete</button>
                 <button id="bookEditButton" data-bookid="${book.id}">Edit</button>
