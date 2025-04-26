@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index-flex.css">
+    <title>Biblioteca de Livros de JS</title>
+</head>
+<body>
+    <h1>Biblioteca de Livros de JS</h1>
+    <p>Easy Image URLs: angular.jpg angularGr.png</p>
+
+    <article class="flexi-grid" id="flexi-grid">
+        <section id="searchSelection">
+            <button id="allBooks">All</button>
+            <button id="readBooks">Read</button>
+            <button id="notReadBooks">Not read</button>
+        </section>
+
+        <section>
+            <form action="">
+                <label for="searchByTitle">Search by Title or Author:</label>
+                <input type="text" name="searchByTitle" id="searchByTitle" placeholder="Book title or author" autocomplete="off">
+            </form>
+        </section>
+
+        <section id="editForm">
+            <button id="showHideForm">Show/Hide Form</button>
+        </section>
+    </article>
+
+    <section class="bookForm visibilityNone" id="bookForm">
+        <h1 id="myH1">Add a book!!</h1>
+        <form action="">
+            <label for="bookTitle">Title:</label>
+            <input type="text" name="bookTitle" id="bookTitle">
+
+            <label for="bookAuthor">Author:</label>
+            <input type="text" name="bookAuthor" id="bookAuthor">
+
+            <label for="bookThumbnail">Image thumbnail:</label>
+            <input type="text" name="bookThumbnail" id="bookThumbnail">
+
+            <label for="bookPopup">Image popup:</label>
+            <input type="text" name="bookPopup" id="bookPopup">
+
+            <label for="checkbox">Already read:</label>
+            <input type="checkbox" name="checkbox" id="formCheckbox">
+
+            <button>Update entry</button>
+        </form>
+    </section>
+
+    <section class="grid" id="grid">
+
+         <!-- <article>
+            <h1>titulo do livro</h1>
+            <h2>autor do livro</h2>
+            <img src="livros/joj.jpg" alt="titulo">
+            <p>Already read: ✅ ❌</p>
+            <button>Delete</button>
+        </article> -->
+
+        
+
+    </section>
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

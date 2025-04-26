@@ -1,0 +1,126 @@
+// Legacy Code INDEX
+
+/*
+
+    //let grid = document.querySelector('section.grid');
+//showBooks(livros);
+//showBooks(getReadBooks());
+//showBooks(getNotReadBooks());
+//let buttonSelected = null;
+
+   searchSelection.addEventListener('click', (eventObj) => {
+        // showBooks(buttonsArray.find(obj => obj.button === eventObj.target.id).bookMethod.split(", ")[0]);
+        selectFilter(eventObj.target.id);
+    }, false)
+
+        console.log('Button array: ', buttonsArray);
+
+        // = document.getElementById('bookDeleteButton'); -- Sakujo --
+        grid.addEventListener('click', (eventObj) => {
+
+        }, false)
+
+    searchByTitle.focus();
+
+    searchByTitle.addEventListener('input', (eventObj) => {
+        eventObj.preventDefault();
+        // searchByInput(eventObj.target.value);
+        console.log(eventObj.target.value.search(livros.author));
+        /!*livros.forEach(searchByInput(eventObj.target.value));*!/
+
+
+        // console.log(eventObj.target.value)
+    }, false)
+
+    // Delete button
+    grid.addEventListener('click', (eventObj) => {
+        if (eventObj.target.id === 'bookDeleteButton')
+            sakujo(eventObj.target);
+    }, false)
+
+
+    // Show book pop up Show book pop up Show book pop up Show book pop up Show book pop up Show book pop up
+    grid.addEventListener('click', (eventObj) => {
+        showPopUp(eventObj.target)
+    } ,false)
+
+
+*/
+
+// UTILS
+
+Legacy
+function objFactory(button, bookMethod) {
+    return {
+        button: button,
+        bookMethod: bookMethod,
+    }
+}
+
+/!* Fabricates all buttons into a book method automatically *!/
+const buttonsArray = [];
+
+function fabricateButtons() {
+    for (const childrenObj of searchSelection.children) {
+        buttonsArray.push(
+            objFactory(
+                searchSelection.id.button = childrenObj.id,
+                searchSelection.id.bookMethod = `${childrenObj.id}Method()`
+            )
+        )
+    }
+}
+
+    document.addEventListener('click', fabricateButtons, false);
+    fabricateButtons(searchSelection);*/
+
+
+
+/*function searchByInput(textInput) {
+    if (livros.title.includes(textInput) || livros.author.includes(textInput)) {
+        const textInputMethod = () => livros.filter( livro => livro.author === textInput);
+        console.log('True');
+    }
+    console.log(textInput);
+}*/
+
+// Delete book function
+/*function sakujo(click) {
+    console.log(click.dataset.bookid);
+    showBooks(deleteBookMethod(click.dataset.bookid));
+    console.log(livros);
+}*/
+
+// Scrape current book log
+
+/*function sakujoScraper() {
+
+}*/
+
+// Show pop up
+
+
+
+    /*return showBooks( () => livros.filter( livro => livro.author === true) || livros.filter( livro => livro.title === true))*/
+
+// DATA
+
+
+
+let livrosNaoLidos = [
+
+    {
+        title: 'Blockchain com JS',
+        author: "Bina Ramamurthy",
+        alreadyRead: false,
+        imageUrl: 'blockchain.jpg',
+    },
+
+    {
+        title: 'Joy Of Javascript',
+        author: "Luis Ascencio",
+        alreadyRead: false,
+        imageUrl: 'joj.jpg',
+    },
+
+];
