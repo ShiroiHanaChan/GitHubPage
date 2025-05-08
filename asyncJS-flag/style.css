@@ -1,0 +1,19 @@
+.user-grid {
+  /*display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 1em;
+}
+
+.user-card {
+  flex: 0 1 300px;
+  border: 1px solid black;
+  text-align: center;
+  word-break: break-word;
+  padding: 1em;
+}
+
+/*# sourceMappingURL=style.css.map */

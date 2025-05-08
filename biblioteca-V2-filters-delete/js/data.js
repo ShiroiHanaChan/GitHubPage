@@ -18,7 +18,23 @@ let bookThumbnail = document.querySelector('#bookThumbnail');
 let bookPopup = document.querySelector('#bookPopup');
 let bookCheckbox = document.querySelector('#formCheckbox');
 
-let livros = [
+// IIFE will return the new object livros
+let livros;
+
+(async function getBooksDB() {
+    const URL = 'https://my-json-server.typicode.com/JoaoGoncalves/biblio-api/books'
+    try {
+        const response = await fetch(URL);
+        if (!response.ok)
+            throw new Error(`${response.status}`);
+        livros = await response.json();
+    } catch (error) {
+        console.error(error.message);
+    }
+    return livros;
+})();
+
+let livrosOld = [
     {
         id: 0,
         title: 'Angular Com Typescript',

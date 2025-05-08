@@ -1,0 +1,12 @@
+usar um json dos posts do randomuser, ir buscar aleatoriamente 30 users (https://randomuser.me/api/?results=30),apresentar numa pagina somente os users "femininos", criando uma lista de de posts formatados, como "Cards", que deverão incluir:
+- imagem do avatar
+- nome completo
+- email 
+- telephone
+-cidade, com indicação da "timezone"
+
+utilizar os novos metodos de arrays para iterar a array de objectos, usar destructuring para a criação (mapeamento) de variaveis.
+
+bom trabalho :-) 
+
+
