@@ -1,0 +1,14 @@
+:root {
+  --font-size: 16px;
+  --font-400: 400;
+  --font-600: 600;
+  --font-700: 700;
+}
+
+html {
+  font-family: "SF Pro Rounded", "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  font-size: 1.125rem;
+  font-weight: lighter;
+}
+
+/*# sourceMappingURL=typography.css.map */

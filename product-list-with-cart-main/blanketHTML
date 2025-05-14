@@ -1,0 +1,98 @@
+PRODUCT LIST - MAIN
+
+<section class="product-card">
+            <div>
+                <img class="red-border" src="./assets/images/image-waffle-desktop.jpg" alt="">
+                <button class="active"><figure><img src="./assets/images/icon-decrement-quantity.svg" alt=""></figure> 4 <figure><img src="./assets/images/icon-increment-quantity.svg" alt=""></figure></button>
+            </div>
+            <h2>Waffle</h2>
+            <p><b>Waffle with Berries</b></p>
+            <p>6,49€</p>
+        </section>
+
+        <section class="product-card">
+            <div>
+                <img src="./assets/images/image-creme-brulee-desktop.jpg" alt="">
+                <button class="resting"><figure><img src="./assets/images/icon-add-to-cart.svg" alt=""></figure> Add to Cart</button>
+            </div>
+            <h2>Crème Brúlée</h2>
+            <p><b>Vanilla Bean Crème Brúlée</b></p>
+            <p>6,99€</p>
+        </section>
+
+        <section class="product-card">
+            <div>
+                <img src="./assets/images/image-tiramisu-desktop.jpg" alt="">
+                <button class="resting"><figure><img src="./assets/images/icon-add-to-cart.svg" alt=""></figure> Add to Cart</button>
+            </div>
+            <h2>Tiramisu</h2>
+            <p><b>Classic Tiramisu</b></p>
+            <p>6,99€</p>
+        </section>
+
+        <section class="product-card">
+            <div>
+                <img src="./assets/images/image-macaron-desktop.jpg" alt="">
+                <button class="resting"><figure><img src="./assets/images/icon-add-to-cart.svg" alt=""></figure> Add to Cart</button>
+            </div>
+            <h2>Macaron</h2>
+            <p><b>Macaron Mix of Five</b></p>
+            <p>7,99€</p>
+        </section>
+
+        <section class="product-card">
+            <div>
+                <img src="./assets/images/image-baklava-desktop.jpg" alt="">
+                <button class="resting"><figure><img src="./assets/images/icon-add-to-cart.svg" alt=""></figure> Add to Cart</button>
+            </div>
+            <h2>Baklava</h2>
+            <p><b>Pistachio Baklava</b></p>
+            <p>7,99€</p>
+        </section>
+
+        -------------------------------------
+
+        ASIDE
+
+<h2>Your Cart <span id="cartItems">(0)</span></h2>
+        <!--<figure><img src="./assets/images/illustration-empty-cart.svg" alt=""><p>Your added items will appear here</p></figure>-->
+        <article id="cartList" class="cart-list">
+            <section class="cart-item-listing">
+                <div class="cart-item-grid">
+                    <p>Classic Tiramisu</p>
+                    <span>2x</span>
+                    <span>@6,49€</span>
+                    <span>12,98€</span>
+                </div>
+                <button><img src="./assets/images/icon-remove-item.svg" alt=""></button>
+            </section>
+
+            <section class="cart-item-listing">
+                <div class="cart-item-grid">
+                    <p>Vanilla Bean Crème Brûlée</p>
+                    <span>2x</span>
+                    <span>@6,49€</span>
+                    <span>12,98€</span>
+                </div>
+                <button><img src="./assets/images/icon-remove-item.svg" alt=""></button>
+            </section>
+
+            <section class="cart-item-listing">
+                <div class="cart-item-grid">
+                    <p>Vanilla Panna Cotta</p>
+                    <span>2x</span>
+                    <span>@6,49€</span>
+                    <span>12,98€</span>
+                </div>
+                <button><img src="./assets/images/icon-remove-item.svg" alt=""></button>
+            </section>
+        </article>
+
+        <article class="order-total">
+            <p>Order Total</p>
+            <span>46,57€</span>
+        </article>
+
+        <article class="carbon-neutral-banner"><img src="./assets/images/icon-carbon-neutral.svg" alt=""> This is a <b>carbon-neutral</b> delivery</article>
+
+        <button class="cart-list-button" id="cartListButton">Confirm Order</button>

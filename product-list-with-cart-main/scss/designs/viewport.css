@@ -1,0 +1,8 @@
+body {
+  margin: var(--spacing-200);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "productList productList aside";
+}
+
+/*# sourceMappingURL=viewport.css.map */

@@ -1,0 +1,69 @@
+@import "../foundation/mixins";
+
+.cart-item-listing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  padding: .3em .9em;
+  line-height: normal;
+  background-color: white;
+  border-radius: var(--radius-200);
+  gap: 5px;
+  > button {
+    border: 1px solid var(--neutral-400);
+    border-radius: var(--radius-full);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2em;
+  }
+}
+
+.cart-item-grid {
+  > span:nth-child(3) {
+    padding-inline: .5em;
+  }
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  margin-block: var(--spacing-200);
+}
+
+.order-total {
+  @include display-flex($justify-content: space-between);
+  > p {
+    margin: 0;
+  }
+  > span {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+}
+
+.carbon-neutral-banner {
+  @include display-flex($justify-content: center, $gap: 5px);
+  margin-block: var(--spacing-200);
+  background-color: hsl(22deg 48% 98%);
+  border-radius: var(--radius-200);
+  padding: var(--spacing-150);
+  > b {
+    display: contents;
+  }
+}
+
+.cart-list-button {
+  @include display-flex($justify-content: center);
+  color: var(--neutral-100);
+  background-color: var(--red);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-150);
+  flex: 1 0;
+  &:hover {
+    cursor: pointer;
+  }
+}

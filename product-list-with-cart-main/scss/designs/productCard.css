@@ -1,0 +1,82 @@
+@import '../foundation/colors.css';
+@import '../foundation/spacing.css';
+@import '../foundation/typography.css';
+.product-card {
+  flex: 0 0 fit-content;
+  padding: var(--spacing-100);
+  background-color: var(--rose-100);
+  border-radius: var(--radius-100);
+  width: fit-content;
+}
+.product-card *:not(div) + * {
+  margin: var(--spacing-050) 0 0;
+}
+.product-card > h2 {
+  color: var(--neutral-400);
+  font-weight: 400;
+  font-size: 1em;
+}
+.product-card > p:first-child {
+  font-size: 2em;
+}
+.product-card > p:last-child {
+  color: var(--green);
+}
+.product-card > div {
+  width: fit-content;
+}
+.product-card > div > img {
+  height: 250px;
+  border-radius: var(--radius-100);
+}
+.product-card > div > button {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  width: 50%;
+  inset: 0;
+  margin: auto;
+  position: relative;
+  translate: 0% -50%;
+  border-radius: var(--radius-full);
+  height: 1.3em;
+}
+.product-card > div > button:hover {
+  cursor: pointer;
+}
+.product-card > div > button:hover[class~=resting] {
+  border-color: var(--green);
+  color: var(--green);
+}
+.product-card > div > button > figure {
+  margin: 0;
+}
+
+.resting {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--rose-300);
+  justify-content: space-around;
+}
+
+.active {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  justify-content: space-between;
+  color: white;
+}
+.active > figure {
+  border: 1px solid var(--neutral-100);
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 10px;
+  padding: 0.2em;
+}
+
+.red-border {
+  border: 3px solid var(--red);
+}
+
+/*# sourceMappingURL=productCard.css.map */

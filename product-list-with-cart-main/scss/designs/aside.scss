@@ -1,0 +1,22 @@
+aside {
+  grid-area: aside;
+  width: 100%;
+  height: fit-content;
+  background-color: #ffe9ec;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  border-radius: var(--radius-200);
+  > h2 {
+    color: var(--red);
+  }
+  > figure, p {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    > p {
+      color: var(--neutral-400);
+    }
+  }
+}
+
+/* Injected classes */

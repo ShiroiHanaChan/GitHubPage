@@ -1,0 +1,85 @@
+@import '../foundation/colors.css';
+@import '../foundation/spacing.css';
+@import '../foundation/typography.css';
+
+.product-card {
+  flex: 0 0 fit-content;
+  padding: var(--spacing-100);
+  background-color: var(--rose-100);
+  border-radius: var(--radius-100);
+  *:not(div) + * {
+    margin: var(--spacing-050) 0 0;
+  }
+  width: fit-content;
+  // Text coloring and formatting
+  > h2 {
+    color: var(--neutral-400);
+    font-weight: 400;
+    font-size: 1em;
+  }
+  // Description
+  > p:first-child {
+    font-size: 2em;
+  }
+  // Pricing
+  > p:last-child {
+    color: var(--green);
+  }
+  > div {
+    width: fit-content;
+    > img {
+      height: 250px;
+      border-radius: var(--radius-100);
+    }
+    > button {
+      display: flex;
+      align-items: center;
+      padding: .5em 1em;
+      width: 50%;
+      inset: 0;
+      margin: auto;
+      position: relative;
+      translate: 0% -50%;
+      border-radius: var(--radius-full);
+      height: 1.3em;
+      &:hover {
+        cursor: pointer;
+        // Sets resting class buttons to have a green hover color
+        &[class~="resting"] {
+          border-color: var(--green);
+          color: var(--green);
+        }
+      }
+      > figure {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.resting {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--rose-300);
+  justify-content: space-around;
+ }
+
+.active {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  justify-content: space-between;
+  color: white;
+  > figure {
+    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+    width: 10px;
+    padding: .2em;
+  }
+}
+
+.red-border {
+  border: 3px solid var(--red);
+}

@@ -1,0 +1,24 @@
+aside {
+  grid-area: aside;
+  width: 100%;
+  height: fit-content;
+  background-color: #ffe9ec;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  border-radius: var(--radius-200);
+}
+aside > h2 {
+  color: var(--red);
+}
+aside > figure, aside p {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+aside > figure > p, aside p > p {
+  color: var(--neutral-400);
+}
+
+/* Injected classes */
+
+/*# sourceMappingURL=aside.css.map */
