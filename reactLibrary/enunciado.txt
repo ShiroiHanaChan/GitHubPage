@@ -1,0 +1,7 @@
+1 - Partir a aplicação em componentes.
+2 - Criar uma versão estática da aplicação.
+3 - Aplicação "Data-Driven", ligar ao modelo de dados.
+4 - Definir qual a componente que ira gerir o "State".
+5 - Passar via "props" os dados do State.
+6 - Criar as interações nas componentes, para alterar o "State" da aplicação.
+7 - NÃO É PARA FAZER - ligar ao endpoint da minha API externa.

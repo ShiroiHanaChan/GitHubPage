@@ -1,0 +1,1 @@
+export const path = 'https://my-json-server.typicode.com/JoaoGoncalves/biblio-api/books';

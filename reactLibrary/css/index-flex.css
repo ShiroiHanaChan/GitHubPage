@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'SF Pro Rounded','SF Mono', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+body > h1{
+    margin: 1em 0;
+    border-bottom: 2px solid gray;
+    padding: 1em;
+}
+
+/* section.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+    padding: 1em;
+}
+
+section.grid article{
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 1em;
+
+} */
+
+section.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 1em;
+}
+
+section.grid article{
+    flex: 0 1 300px;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+section.grid article > *{
+    margin: .8em 0;
+}
+
+/* Flexigrid */
+
+.flexi-grid {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #4a8cdb;
+    padding: 2rem;
+    align-items: center;
+    color: white;
+    > section label {
+        font-weight: 900;
+    }
+}
+
+button, input {
+     color: white;
+     padding: .7em;
+     border: 2px solid black;
+     background-color: #2a3133;
+     border-radius: 8px;
+     &:hover {
+         cursor: pointer;
+         background-color: #404d4f;
+         &:active {
+            background-color: #63797c;
+         }
+     }
+     &::placeholder {
+        color: inherit;
+     }
+ }
+
+.pop-up {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .2);
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > img {
+        border: 4px solid black;
+        border-radius: 8px;
+        /* The reset */
+        max-width: 100%;
+        height: calc(80vh);
+        vertical-align: middle;
+        /* Lazy loading presets */
+        font-style: italic;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* For floats */
+        shape-margin: 0.75rem;
+    }
+}
+
+.bookForm {
+    padding-block: 20px;
+    & form {
+        width: min-content;
+        margin: auto;
+        text-align: left;
+        > *:not(label[for*="checkbox"] +) {
+            display: block;
+        }
+        *:nth-child(n+1) + * {
+            margin: 0 0 1em;
+        }
+    }
+
+}
+
+.visibilityNone {
+    visibility: hidden;
+    height: 0px;
+}
+
+.displayVisible {
+    visibility: visible;
+}
