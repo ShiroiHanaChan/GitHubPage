@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/$USER/public_html/
+    - cd blockBreaker
+    - npm install
+    - npm run build
+    - /bin/cp -R dist/* $DEPLOYPATH
+    - cd ..
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R scss $DEPLOYPATH
+    - /bin/cp -R weatherAPI $DEPLOYPATH
+    - /bin/cp projectTemp.html $DEPLOYPATH/temp.html
